@@ -8,7 +8,7 @@
 
 
 
-![alt text](Logo.png "Description goes here")
+![alt text](Portada.png "Description goes here")
 
 
 
