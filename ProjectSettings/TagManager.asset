@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - collision
+  - player
+  - wall
+  - npc
+  - projectiles
+  - objects
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - collision
+  - player
+  - objects
+  - projectiles
+  - npc
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Landscape
+    uniqueID: 89038607
+    locked: 0
+  - name: Floor
+    uniqueID: 1631062855
+    locked: 0
+  - name: Structures
+    uniqueID: 2212484055
+    locked: 0
+  - name: Objects
+    uniqueID: 3258141069
+    locked: 0
+  - name: Top
+    uniqueID: 1783420207
+    locked: 0
