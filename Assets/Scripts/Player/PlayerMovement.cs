@@ -9,13 +9,16 @@ public class PlayerMovement : MonoBehaviour {
 	public float speed = 6f;
 
 
-    /* reworking */
+   
     Vector2 movement; //guarda la direccion del jugador
     private Rigidbody2D body;
 
 
     void Awake(){
         body = GetComponent<Rigidbody2D>();
+        body.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        body.interpolation = RigidbodyInterpolation2D.Extrapolate;
+
     }
 
     void FixedUpdate() {
@@ -46,16 +49,4 @@ public class PlayerMovement : MonoBehaviour {
       
     }
 
-
-    void OnTriggerEnter2D(Collider2D other){
-        body.AddForce((-1)*movement * (2)*speed, ForceMode2D.Impulse);            
-    }
-
-  
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        body.velocity = Vector2.zero;
-
-    }
 }
