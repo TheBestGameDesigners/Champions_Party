@@ -7,6 +7,11 @@ public class playerShooting : MonoBehaviour {
      public GameObject bullet;
     public GameObject bulletPosition;
     public float speed;
+    Animator anim;
+
+    void Awake() {
+        anim = GetComponent<Animator>();
+    }
     
     void Start()
     {
@@ -30,7 +35,12 @@ public class playerShooting : MonoBehaviour {
     // Update is called once per frame
     void Update()
      {
-        if (Input.GetMouseButtonDown(0))
+        bool isShooting = Input.GetMouseButton(0);
+
+        if (isShooting)
+        {
             Fire();
+        }
+        anim.SetBool("isShooting", isShooting);
      }
 }
