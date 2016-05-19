@@ -4,7 +4,7 @@ using System.Collections;
 public class playerShooting : MonoBehaviour {
 
 
-     public GameObject bullet;
+    public GameObject bullet;
     public GameObject bulletPosition;
     public float speed;
     Animator anim;
@@ -36,11 +36,8 @@ public class playerShooting : MonoBehaviour {
     void Update()
      {
         bool isShooting = Input.GetMouseButton(0);
-
-        if (isShooting)
-        {
-            Fire();
-        }
         anim.SetBool("isShooting", isShooting);
+        
+        
      }
 }
