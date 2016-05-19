@@ -10,6 +10,8 @@ TagManager:
   - npc
   - projectiles
   - objects
+  - bullet
+  - Enemy
   layers:
   - Default
   - TransparentFX
