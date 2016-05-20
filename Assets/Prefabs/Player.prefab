@@ -14,6 +14,8 @@ GameObject:
   - 114: {fileID: 11455238}
   - 114: {fileID: 11471820}
   - 114: {fileID: 11409068}
+  - 95: {fileID: 9599232}
+  - 114: {fileID: 11481556}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -55,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103814}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071067}
-  m_LocalPosition: {x: 1839.1, y: -837, z: -1}
+  m_LocalPosition: {x: 1569, y: -970, z: -1}
   m_LocalScale: {x: 100, y: 100, z: 1}
   m_Children:
   - {fileID: 476562}
@@ -87,11 +89,28 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: -0.05, y: 0}
   serializedVersion: 2
   m_Radius: 0.22867924
+--- !u!95 &9599232
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103814}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 79abad692cfb06a429e30094613dd24d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11409068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,6 +148,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 70
+--- !u!114 &11481556
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0a267189493b749b8af7519fc47a27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHealth: 100
+  currentHealth: 0
+  healthSlider: {fileID: 0}
 --- !u!212 &21247324
 SpriteRenderer:
   m_ObjectHideFlags: 1
