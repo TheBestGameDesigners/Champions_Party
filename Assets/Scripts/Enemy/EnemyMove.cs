@@ -25,10 +25,12 @@ public class EnemyMove : MonoBehaviour {
 
     void Update()
     {
-        target = player.transform;
+        if (target != null)
+        {
+            target = player.transform;
             Vector2 dir = target.position - enemy.transform.position;
             // Only needed if objects don't share 'z' value.
-           if (dir != Vector2.zero)
+            if (dir != Vector2.zero)
                 enemy.transform.rotation = Quaternion.Slerp(transform.rotation,
                     Quaternion.FromToRotation(Vector2.right, dir),
                     rotationSpeed * Time.deltaTime);
@@ -36,7 +38,8 @@ public class EnemyMove : MonoBehaviour {
             //Move Towards Target
             enemy.transform.position += (target.position - transform.position).normalized
                 * moveSpeed * Time.deltaTime;
-        enemy.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            enemy.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        }
     }
 
    void OnTriggerEnter2D(Collider2D other)

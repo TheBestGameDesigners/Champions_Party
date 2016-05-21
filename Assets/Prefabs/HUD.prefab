@@ -125,6 +125,8 @@ GameObject:
   - 223: {fileID: 22381428}
   - 114: {fileID: 11470340}
   - 114: {fileID: 11447158}
+  - 114: {fileID: 11429772}
+  - 114: {fileID: 11459856}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -207,6 +209,17 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &11429772
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afbdbdf07720d5842b42eecb20377109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11447158
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -223,6 +236,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &11459856
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cf7a51770999294ab2c28fb884be0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoHUD: {fileID: 11488900}
+  gh: {fileID: 11429772}
 --- !u!114 &11470340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -330,9 +356,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'texto para probar que las cosas siguen bajando
-
-    siguiente linea
+  m_Text: '
 
 '
 --- !u!222 &22215746

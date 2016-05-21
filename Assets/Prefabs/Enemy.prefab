@@ -47,7 +47,7 @@ Rigidbody2D:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &5849968
 CircleCollider2D:
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeAttacks: 0.5
-  damage: 20
+  damage: 5
   p: {fileID: 0}
   player: {fileID: 103814, guid: 54ebf5b18124a7a429106cd2cb2f6be5, type: 2}
 --- !u!114 &11495844
