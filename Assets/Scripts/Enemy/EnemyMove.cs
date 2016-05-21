@@ -30,15 +30,20 @@ public class EnemyMove : MonoBehaviour {
             target = player.transform;
             Vector2 dir = target.position - enemy.transform.position;
             // Only needed if objects don't share 'z' value.
-            if (dir != Vector2.zero)
-                enemy.transform.rotation = Quaternion.Slerp(transform.rotation,
-                    Quaternion.FromToRotation(Vector2.right, dir),
-                    rotationSpeed * Time.deltaTime);
+           float distance = dir.sqrMagnitude;
+            if (distance < 50000.04f)
+            {
+                Debug.Log(distance);
+                if (dir != Vector2.zero)
+                    enemy.transform.rotation = Quaternion.Slerp(transform.rotation,
+                        Quaternion.FromToRotation(Vector2.right, dir),
+                        rotationSpeed * Time.deltaTime);
 
-            //Move Towards Target
-            enemy.transform.position += (target.position - transform.position).normalized
-                * moveSpeed * Time.deltaTime;
-            enemy.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+                //Move Towards Target
+                enemy.transform.position += (target.position - transform.position).normalized
+                    * moveSpeed * Time.deltaTime;
+                enemy.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            }
         }
     }
 
