@@ -8,9 +8,11 @@ public class playerShooting : MonoBehaviour {
     public GameObject bulletPosition;
     public float speed;
     Animator anim;
+    float timer;
 
     void Awake() {
         anim = GetComponent<Animator>();
+        timer = 0f;
     }
     
     void Start()
@@ -36,7 +38,14 @@ public class playerShooting : MonoBehaviour {
     void Update()
      {
         bool isShooting = Input.GetMouseButton(0);
-        anim.SetBool("isShooting", isShooting);
+        timer += Time.deltaTime;
+
+        if (timer > 0.5f)
+        {
+            anim.SetBool("isShooting", isShooting);
+            timer = 0f;
+        }
+        
         
         
      }
