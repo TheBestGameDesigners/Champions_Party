@@ -6,6 +6,11 @@ public class GestorHitos : MonoBehaviour {
 
     ArrayList listaHitos;
 	// Use this for initialization
+
+    void awake()
+    {
+        listaHitos = new ArrayList();
+    }
 	void Start () {
         listaHitos = new ArrayList();
         listaHitos.Add(new HitoArmas(10));
