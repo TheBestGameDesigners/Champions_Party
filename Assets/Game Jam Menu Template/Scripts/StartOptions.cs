@@ -80,7 +80,7 @@ public class StartOptions : MonoBehaviour {
 		inMainMenu = false;
 
 		//Hide the main menu UI element
-		showPanels.HideMenu ();
+		//showPanels.HideMenu ();
 
 		//Load the selected scene, by scene index number in build settings
 		SceneManager.LoadScene (sceneToStart);

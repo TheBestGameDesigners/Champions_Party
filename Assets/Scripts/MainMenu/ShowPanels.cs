@@ -39,14 +39,14 @@ public class ShowPanels : MonoBehaviour {
 	public void ShowPausePanel()
 	{
 		pausePanel.SetActive (true);
-		optionsTint.SetActive(true);
+		//optionsTint.SetActive(true);
 	}
 
 	//Call this function to deactivate and hide the Pause panel during game play
 	public void HidePausePanel()
 	{
 		pausePanel.SetActive (false);
-		optionsTint.SetActive(false);
+		//optionsTint.SetActive(false);
 
 	}
 }
