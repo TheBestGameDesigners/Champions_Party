@@ -14,9 +14,4 @@ public class SetAudioLevels : MonoBehaviour {
 		mainMixer.SetFloat("musicVol", musicLvl);
 	}
 
-	//Call this function and pass in the float parameter sfxLevel to set the volume of the AudioMixerGroup SoundFx in mainMixer
-	public void SetSfxLevel(float sfxLevel)
-	{
-		mainMixer.SetFloat("sfxVol", sfxLevel);
-	}
 }
