@@ -8,11 +8,15 @@ public class EnemyShooting : MonoBehaviour {
     public GameObject bulletPosition;
     public GameObject enemy;
     public GameObject player;
+
+    public PlayerHealth p;
+    int damage = 20;
     public float speed;
     float timer;
     // Use this for initialization
     void Start () {
         timer = 0f;
+        p = player.GetComponent<PlayerHealth>();
 	}
 
     void Fire()
@@ -36,4 +40,10 @@ public class EnemyShooting : MonoBehaviour {
             timer = 0f;
         }
 	}
+
+   public void applyDamage()
+    {
+        p.takeDamage(damage);
+    }
+
 }

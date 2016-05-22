@@ -8,9 +8,14 @@ public class PlayerHealth : MonoBehaviour {
     public int currentHealth;
     public Slider healthSlider;
 	// Use this for initialization
+
+    void awake()
+    {
+        currentHealth = startHealth;
+    }
 	void Start () {
         currentHealth = startHealth;
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
