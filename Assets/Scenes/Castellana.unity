@@ -423,23 +423,23 @@ Prefab:
       objectReference: {fileID: 46755130}
     - target: {fileID: 22465598, guid: cd38b3953f228ba439cb53b76559ed40, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22465598, guid: cd38b3953f228ba439cb53b76559ed40, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22426734, guid: cd38b3953f228ba439cb53b76559ed40, type: 2}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22426734, guid: cd38b3953f228ba439cb53b76559ed40, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22426734, guid: cd38b3953f228ba439cb53b76559ed40, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6572650, guid: cd38b3953f228ba439cb53b76559ed40, type: 2}
       propertyPath: m_IsTrigger
