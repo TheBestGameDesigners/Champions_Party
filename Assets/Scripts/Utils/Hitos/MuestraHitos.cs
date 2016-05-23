@@ -14,26 +14,39 @@ public class MuestraHitos : MonoBehaviour {
     {
         gh = game.GetComponent<GestorHitos>();
     }
-    void Start () {
+    void Start()
+    {
         string s = "";
         index = 0;
         gh = game.GetComponent<GestorHitos>();
-        lista = gh.getHitos();
-        h = (Hito)lista[index];
-           s += h.muestraHito();
-        textoHUD.text = s;
+        lista = null;
+        h = null;
+        if (gh != null) { 
+            lista = gh.getHitos();
+            if (lista != null)
+            {
+                h = (Hito)lista[index];
+                s += h.muestraHito();
+                textoHUD.text = s;
+            }
+         }
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (Input.GetMouseButtonDown(0))
         {
-            string s = "";
-            index++;
-            lista = gh.getHitos();
-            h = (Hito)lista[index%lista.Count];
-            s += h.muestraHito();
-            textoHUD.text = s;
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            if (this.GetComponent<Collider2D>().OverlapPoint(mousePosition))
+            {
+                string s = "";
+                index++;
+                lista = gh.getHitos();
+                h = (Hito)lista[index % lista.Count];
+                s += h.muestraHito();
+                textoHUD.text = s;
+            } 
         }
     }
 

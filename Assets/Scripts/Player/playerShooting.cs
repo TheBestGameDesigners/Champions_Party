@@ -9,6 +9,7 @@ public class playerShooting : MonoBehaviour {
     public float speed;
     Animator anim;
     float timer;
+    float timerFire;
 
     void Awake() {
         anim = GetComponent<Animator>();
@@ -25,26 +26,26 @@ public class playerShooting : MonoBehaviour {
         /*GameObject bulletP = (GameObject)Instantiate(bullet);
         bulletP.transform.position = bulletPosition.transform.position;*/
 
-        Vector3 shootDirection;
-        shootDirection = Input.mousePosition;
-        shootDirection.z = 0.0f;
-        shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
-        shootDirection = shootDirection - transform.position;
-        //...instantiating the rocket
-        Rigidbody2D bulletInstance = (Rigidbody2D) Instantiate(bullet.GetComponent<Rigidbody2D>(), bulletPosition.transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
-        bulletInstance.velocity = new Vector2(shootDirection.x * speed, shootDirection.y * speed);
+        if (timerFire > 0.5f)
+        {
+            Vector3 shootDirection;
+            shootDirection = Input.mousePosition;
+            shootDirection.z = 0.0f;
+            shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
+            shootDirection = shootDirection - transform.position;
+            //...instantiating the rocket
+            Rigidbody2D bulletInstance = (Rigidbody2D)Instantiate(bullet.GetComponent<Rigidbody2D>(), bulletPosition.transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+            bulletInstance.velocity = new Vector2(shootDirection.x * speed, shootDirection.y * speed);
+            timerFire = 0f;
+        }
     }
     // Update is called once per frame
     void Update()
      {
         bool isShooting = Input.GetMouseButton(0);
-        timer += Time.deltaTime;
+        timerFire += Time.deltaTime;
 
-        if (timer > 0.5f)
-        {
             anim.SetBool("isShooting", isShooting);
-            timer = 0f;
-        }
         
         
         
