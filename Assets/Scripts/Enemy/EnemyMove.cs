@@ -4,6 +4,8 @@ using System.Collections;
 public class EnemyMove : MonoBehaviour {
 
     GameObject player;
+    GameObject HUD;
+    GestorHitos gestor;
     public GameObject enemy;
     Transform target;
     Transform enemyTransform;
@@ -22,6 +24,10 @@ public class EnemyMove : MonoBehaviour {
         //obtain the game object Transform
         player = null;
         player = GameObject.FindGameObjectsWithTag("Player")[0];
+        HUD = GameObject.FindGameObjectsWithTag("HUD")[0];
+        gestor = GameObject.FindGameObjectsWithTag("imagen")[0].GetComponent<GestorHitos>();
+        if (gestor == null)
+            Debug.Log("gestor no inicializado");
         target = player.transform;
     }
 
@@ -53,6 +59,7 @@ public class EnemyMove : MonoBehaviour {
     {
         if (other.CompareTag("bullet"))
         {
+            gestor.compruebaHitos(1, false, "");
             Destroy(gameObject);
         }
     }

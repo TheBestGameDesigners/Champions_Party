@@ -18,15 +18,13 @@ public class GestorHitos : MonoBehaviour {
         listaHitos.Add(new HitoEncuentraArma("pistola"));
     }
 
-    public ArrayList compruebaHitos(int dato, bool llegado, string arma)
+    public void compruebaHitos(int dato, bool llegado, string arma)
     {
-        ArrayList lista = new ArrayList();
         foreach(Hito h in listaHitos)
         {
             if (h.compruebaHito(dato, llegado, arma))
-                lista.Add(h);
+                listaHitos.Remove(h);  
         }
-        return lista;
     }
 
     public ArrayList getHitos()

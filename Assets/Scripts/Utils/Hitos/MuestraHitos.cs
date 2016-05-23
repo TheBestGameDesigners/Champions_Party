@@ -9,18 +9,18 @@ public class MuestraHitos : MonoBehaviour {
     Hito h;
     ArrayList lista;
     int index;
+    string s;
     // Use this for initialization
-    void awake()
+    void Awake()
     {
-        gh = game.GetComponent<GestorHitos>();
-    }
-    void Start()
-    {
-        string s = "";
+        s = "";
         index = 0;
         gh = game.GetComponent<GestorHitos>();
         lista = null;
         h = null;
+    }
+    void Start()
+    {
         if (gh != null) { 
             lista = gh.getHitos();
             if (lista != null)
@@ -34,13 +34,21 @@ public class MuestraHitos : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (gh != null)
+        {
+            s = "";
+            lista = gh.getHitos();
+            h = (Hito)lista[index % lista.Count];
+            s += h.muestraHito();
+            textoHUD.text = s;
+        }
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             if (this.GetComponent<Collider2D>().OverlapPoint(mousePosition))
             {
-                string s = "";
+                s = "";
                 index++;
                 lista = gh.getHitos();
                 h = (Hito)lista[index % lista.Count];
@@ -48,14 +56,5 @@ public class MuestraHitos : MonoBehaviour {
                 textoHUD.text = s;
             } 
         }
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        string s = "";
-        index++;
-        h = (Hito)lista[index];
-        s += h.muestraHito();
-        textoHUD.text = s;
     }
 }

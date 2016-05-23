@@ -12,6 +12,8 @@ TagManager:
   - objects
   - bullet
   - Enemy
+  - HUD
+  - imagen
   layers:
   - Default
   - TransparentFX

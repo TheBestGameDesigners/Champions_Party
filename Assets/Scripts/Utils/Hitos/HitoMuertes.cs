@@ -13,6 +13,7 @@ public class HitoMuertes : Hito {
     public  override bool compruebaHito(int dato, bool llegado, string arma)
     {
         numMuertes -= dato;
+        texto = "debes matar " + numMuertes + " enemigos";
         if (numMuertes <= 0)
             return true;
         return false;
