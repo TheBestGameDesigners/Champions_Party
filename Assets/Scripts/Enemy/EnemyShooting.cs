@@ -14,17 +14,19 @@ public class EnemyShooting : MonoBehaviour {
     public float speed;
     float timer;
     // Use this for initialization
-    void Start () {
-        timer = 0f;
+
+    void Awake()
+    {
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         p = player.GetComponent<PlayerHealth>();
+    }
+    void Start () {
+        timer = 0f;
+        
 	}
 
     void Fire()
     {
-        /*GameObject bulletP = (GameObject)Instantiate(bullet);
-        bulletP.transform.position = bulletPosition.transform.position;*/
-
         Vector2 shootDirection;
         shootDirection = (player.transform.position - enemy.transform.position);
         //...instantiating the rocket
@@ -35,7 +37,7 @@ public class EnemyShooting : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         timer += Time.deltaTime;
-        if (timer > 3f)
+        if (timer > 3f && player != null)
         {
             Vector2 dir = player.transform.position - enemy.transform.position;
             // Only needed if objects don't share 'z' value.
