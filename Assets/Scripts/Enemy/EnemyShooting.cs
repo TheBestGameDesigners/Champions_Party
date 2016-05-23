@@ -7,15 +7,16 @@ public class EnemyShooting : MonoBehaviour {
     public GameObject bullet;
     public GameObject bulletPosition;
     public GameObject enemy;
-    public GameObject player;
+     GameObject player;
 
-    public PlayerHealth p;
+     PlayerHealth p;
     int damage = 20;
     public float speed;
     float timer;
     // Use this for initialization
     void Start () {
         timer = 0f;
+        player = GameObject.FindGameObjectsWithTag("Player")[0];
         p = player.GetComponent<PlayerHealth>();
 	}
 
@@ -36,8 +37,14 @@ public class EnemyShooting : MonoBehaviour {
         timer += Time.deltaTime;
         if (timer > 3f)
         {
-            Fire();
-            timer = 0f;
+            Vector2 dir = player.transform.position - enemy.transform.position;
+            // Only needed if objects don't share 'z' value.
+            float distance = dir.sqrMagnitude;
+            if (distance < 50000.04f)
+            {
+                Fire();
+                timer = 0f;
+            }
         }
 	}
 

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemyMove : MonoBehaviour {
 
-    public GameObject player;
+    GameObject player;
     public GameObject enemy;
     Transform target;
     Transform enemyTransform;
@@ -20,6 +20,8 @@ public class EnemyMove : MonoBehaviour {
     void Start()
     {
         //obtain the game object Transform
+        player = null;
+        player = GameObject.FindGameObjectsWithTag("Player")[0];
         target = player.transform;
     }
 

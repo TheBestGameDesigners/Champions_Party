@@ -5,11 +5,13 @@ public class bulletEnemy : MonoBehaviour {
 
     public float timeAttacks = 0.5f;
     public int damage = 30;
-    public EnemyShooting enemy;
+    GameObject player;
+    PlayerHealth p;
     // Use this for initialization
     void Start()
     {
-        //p = player.GetComponent<PlayerHealth>();
+        player = GameObject.FindGameObjectsWithTag("Player")[0];
+        p = player.GetComponent<PlayerHealth>();
     }
 
     // Update is called once per frame
@@ -20,8 +22,8 @@ public class bulletEnemy : MonoBehaviour {
 
     void applyDamage()
     {
-
-        enemy.applyDamage();
+        if(p.currentHealth > 0)
+         p.takeDamage(damage);
     }
 
     void OnTriggerEnter2D(Collider2D other)

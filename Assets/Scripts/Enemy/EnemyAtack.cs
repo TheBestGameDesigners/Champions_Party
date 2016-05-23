@@ -5,12 +5,14 @@ public class EnemyAtack : MonoBehaviour {
 
     public float timeAttacks = 0.5f;
     public int damage = 20;
-    public PlayerHealth p;
-    public GameObject player;
+    PlayerHealth p;
+    GameObject player;
     bool playerInRange = false;
     float timer;
 	// Use this for initialization
 	void Start () {
+        player = GameObject.FindGameObjectsWithTag("Player")[0];
+        p = player.GetComponent<PlayerHealth>();
         timer = 0f;
 	}
 	
@@ -32,17 +34,17 @@ public class EnemyAtack : MonoBehaviour {
             p.takeDamage(damage);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Player"))
         {
             playerInRange = true;
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    void OnCollisionExit2D(Collision2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             playerInRange = false;
         }
