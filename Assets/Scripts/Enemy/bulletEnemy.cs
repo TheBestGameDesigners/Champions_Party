@@ -28,6 +28,7 @@ public class bulletEnemy : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        Destroy(gameObject);
         if (other.CompareTag("Player"))
         {
             applyDamage();
