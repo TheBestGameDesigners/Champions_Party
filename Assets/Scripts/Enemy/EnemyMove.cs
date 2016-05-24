@@ -13,10 +13,11 @@ public class EnemyMove : MonoBehaviour {
     public float rotationSpeed = 3f;
     float range;
 
+    
 
     void Awake()
     {
-        enemyTransform = transform; //cache transform data for easy access/preformance
+        
     }
 
     void Start()
@@ -41,7 +42,7 @@ public class EnemyMove : MonoBehaviour {
            float distance = dir.sqrMagnitude;
             if (distance < 50000.04f)
             {
-                Debug.Log(distance);
+
                 if (dir != Vector2.zero)
                     enemy.transform.rotation = Quaternion.Slerp(transform.rotation,
                         Quaternion.FromToRotation(Vector2.right, dir),
@@ -53,14 +54,5 @@ public class EnemyMove : MonoBehaviour {
                 enemy.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             }
         }
-    }
-
-   void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("bullet"))
-        {
-            gestor.compruebaHitos(1, false, "");
-            Destroy(gameObject);
-        }
-    }
+    }
 }
