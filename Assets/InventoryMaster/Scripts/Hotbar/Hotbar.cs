@@ -58,14 +58,27 @@ public class Hotbar : MonoBehaviour
         {
             if (Input.GetKeyDown(keyCodesForSlots[i]))
             {
-                if (transform.GetChild(1).GetChild(i).childCount != 0 && transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item.itemType != ItemType.UFPS_Ammo)
+
+                Item objeto = transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item;
+
+
+                if (transform.GetChild(1).GetChild(i).childCount != 0 && objeto.itemType == ItemType.Weapon)
                 {
+
+              
+            
+                    Debug.Log("yieee");
+
+                    /*
                     if (transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ConsumeItem>().duplication != null && transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item.maxStack == 1)
                     {
                         Destroy(transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ConsumeItem>().duplication);
                     }
                     transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ConsumeItem>().consumeIt();
+                    */
                 }
+
+    
             }
         }
     }

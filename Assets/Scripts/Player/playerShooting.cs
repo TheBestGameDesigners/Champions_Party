@@ -3,13 +3,16 @@ using System.Collections;
 
 public class playerShooting : MonoBehaviour {
 
-
+    public Weapon currentWeapon;
     public GameObject bullet;
     public GameObject bulletPosition;
     public float speed;
     Animator anim;
     float timer;
     float timerFire;
+
+
+    
 
     void Awake() {
         anim = GetComponent<Animator>();
