@@ -15,10 +15,12 @@ public class EnemyHealth : MonoBehaviour
     public int remainingDamageFrames = 0;
     public int showDamageForFrames = 5;
     private Color originalColor;
+    Animator anim;
 
-    void awake()
+    void Awake()
     {
-        originalColor = GetComponent<SpriteRenderer>().color;   
+        anim = GetComponent<Animator>();
+        
     }
     void Start()
     {
@@ -33,7 +35,7 @@ public class EnemyHealth : MonoBehaviour
             remainingDamageFrames--;
             if (remainingDamageFrames == 0)
             {
-                //GetComponent<SpriteRenderer>().color = originalColor;
+              
                 SpriteRenderer renderer = GetComponent<SpriteRenderer>();
                 renderer.color = new Color(1.0f, 1.0f, 1.0f);
             }
@@ -43,13 +45,20 @@ public class EnemyHealth : MonoBehaviour
     public void takeDamage(int damage)
     {
         currentHealth -= damage;
+        
         if (currentHealth <= 0)
-            death();
+        {
+            float time = anim.runtimeAnimatorController.animationClips[1].length;
+            anim.SetBool("isDead", true);
+            Invoke("death", time);
+        }
     }
 
     void death()
-    { 
+    {
+        Destroy(anim);
         Destroy(gameObject);
+        
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -64,7 +73,7 @@ public class EnemyHealth : MonoBehaviour
     void ShowDamage()
     {
         remainingDamageFrames = 5;
-        //GetComponent<SpriteRenderer>().color = Color.red;
+        
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
         renderer.color = new Color(1.0f, 0.0f, 0.0f);
     }
