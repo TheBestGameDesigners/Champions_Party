@@ -33,7 +33,9 @@ public class EnemyHealth : MonoBehaviour
             remainingDamageFrames--;
             if (remainingDamageFrames == 0)
             {
-                GetComponent<SpriteRenderer>().color = originalColor; 
+                //GetComponent<SpriteRenderer>().color = originalColor;
+                SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+                renderer.color = new Color(1.0f, 1.0f, 1.0f);
             }
         }
     }
@@ -62,6 +64,8 @@ public class EnemyHealth : MonoBehaviour
     void ShowDamage()
     {
         remainingDamageFrames = 5;
-        GetComponent<SpriteRenderer>().color = Color.red;
+        //GetComponent<SpriteRenderer>().color = Color.red;
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+        renderer.color = new Color(1.0f, 0.0f, 0.0f);
     }
 }
