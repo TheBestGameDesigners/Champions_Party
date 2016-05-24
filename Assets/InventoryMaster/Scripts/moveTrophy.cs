@@ -10,7 +10,12 @@ public class moveTrophy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        gameObject.transform.Rotate(Vector3.right * Time.deltaTime * 100);
-        gameObject.transform.Rotate(Vector3.up * Time.deltaTime * 100);
+        gameObject.transform.Rotate(0, 0, 100 * Time.deltaTime);
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Application.LoadLevel(4);
+       // Destroy(gameObject);
     }
 }

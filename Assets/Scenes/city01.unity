@@ -5101,19 +5101,7 @@ MonoBehaviour:
   SlotGridLayout: {fileID: 1578622969}
   SlotGridRectTransform: {fileID: 1578622968}
   mainInventory: 1
-  ItemsInInventory:
-  - itemName: cuchillo
-    itemID: 1
-    itemDesc: "Con esto puedes rajar a la pe\xF1a"
-    itemIcon: {fileID: 21300000, guid: bf05245890e58634092b5b54601ff7ee, type: 3}
-    itemModel: {fileID: 147614, guid: 3c5cce5b5b7ce0b41a227e76e8d1a173, type: 2}
-    itemValue: 1
-    itemType: 1
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: -1
-    rarity: 0
-    itemAttributes: []
+  ItemsInInventory: []
   height: 4
   width: 4
   stackable: 1
@@ -5307,6 +5295,7 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -6596,8 +6585,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2115549518}
   m_LocalRotation: {x: 0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 200, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1524189877}
   m_Father: {fileID: 0}

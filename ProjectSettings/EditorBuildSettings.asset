@@ -15,3 +15,5 @@ EditorBuildSettings:
     path: Assets/Scenes/city01.unity
   - enabled: 1
     path: Assets/Scenes/city02.unity
+  - enabled: 1
+    path: Assets/Scenes/Winner.unity
