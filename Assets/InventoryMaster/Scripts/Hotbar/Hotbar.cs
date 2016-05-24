@@ -64,10 +64,8 @@ public class Hotbar : MonoBehaviour
 
                 if (transform.GetChild(1).GetChild(i).childCount != 0 && objeto.itemType == ItemType.Weapon)
                 {
-
-              
-            
-                    Debug.Log("yieee");
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<playerShooting>().currentWeapon = objeto.itemModel;
+                  
 
                     /*
                     if (transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ConsumeItem>().duplication != null && transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item.maxStack == 1)

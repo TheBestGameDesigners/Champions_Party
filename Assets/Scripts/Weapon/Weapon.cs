@@ -3,6 +3,9 @@ using System.Collections;
 
 public class Weapon : MonoBehaviour {
 
+
+    public string name;
+
 	// Use this for initialization
 	void Start () {
 	

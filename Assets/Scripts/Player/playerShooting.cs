@@ -3,7 +3,7 @@ using System.Collections;
 
 public class playerShooting : MonoBehaviour {
 
-    public Weapon currentWeapon;
+    public GameObject currentWeapon;
     public GameObject bullet;
     public GameObject bulletPosition;
     public float speed;
