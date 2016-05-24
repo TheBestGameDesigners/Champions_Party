@@ -5,6 +5,7 @@ public class Weapon : MonoBehaviour {
 
 
     public string name;
+    public int Animation_frame;
 
 	// Use this for initialization
 	void Start () {

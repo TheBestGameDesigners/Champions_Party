@@ -11,12 +11,13 @@ public class playerShooting : MonoBehaviour {
     float timer;
     float timerFire;
 
-
+    private int anim_duration;
     
 
     void Awake() {
         anim = GetComponent<Animator>();
         timer = 0f;
+        anim_duration = 0; 
     }
     
     void Start()
@@ -29,8 +30,8 @@ public class playerShooting : MonoBehaviour {
         /*GameObject bulletP = (GameObject)Instantiate(bullet);
         bulletP.transform.position = bulletPosition.transform.position;*/
 
-        if (timerFire > 0.5f)
-        {
+       // if (timerFire > 0.5f)
+        //{
             Vector3 shootDirection;
             shootDirection = Input.mousePosition;
             shootDirection.z = 0.0f;
@@ -40,17 +41,37 @@ public class playerShooting : MonoBehaviour {
             Rigidbody2D bulletInstance = (Rigidbody2D)Instantiate(bullet.GetComponent<Rigidbody2D>(), bulletPosition.transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
             bulletInstance.velocity = new Vector2(shootDirection.x * speed, shootDirection.y * speed);
             timerFire = 0f;
-        }
+        //}
     }
     // Update is called once per frame
     void Update()
      {
+
+        /*
         bool isShooting = Input.GetMouseButton(0);
         timerFire += Time.deltaTime;
 
             anim.SetBool("isShooting", isShooting);
+        */
+        if (anim_duration > 0)
+        {
+            anim_duration--;
+
+            if (anim_duration == 0) { 
+                anim.SetInteger("action", 0);
+                Fire();
+
+            }
+
+
+        }
+
         
-        
-        
-     }
+        if (Input.GetMouseButton(0) && currentWeapon) { 
+            anim.SetInteger("action", currentWeapon.GetComponent<Weapon>().Animation_frame);
+            anim_duration = 5;
+        }
+
+
+    }
 }
