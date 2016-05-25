@@ -15,6 +15,7 @@ public class EnemyHealth : MonoBehaviour
     public int remainingDamageFrames = 0;
     public int showDamageForFrames = 5;
     private Color originalColor;
+    GestorHitos gestor;
     Animator anim;
 
     void Awake()
@@ -25,6 +26,8 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         currentHealth = startHealth;
+        //HUD = GameObject.FindGameObjectsWithTag("HUD")[0];
+        gestor = GameObject.FindGameObjectsWithTag("imagen")[0].GetComponent<GestorHitos>();
     }
 
     // Update is called once per frame
@@ -58,7 +61,8 @@ public class EnemyHealth : MonoBehaviour
     }
 
     void death()
-    {
+    { 
+        gestor.compruebaHitos(1, false, "");
         Destroy(anim);
         Destroy(gameObject);
         
