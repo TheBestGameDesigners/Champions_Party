@@ -6,16 +6,18 @@ public class PlayerHealth : MonoBehaviour {
 
     public int startHealth = 100;
     public int currentHealth;
-    public Slider healthSlider;
+    Slider healthSlider;
 	// Use this for initialization
 
-    void awake()
+    void Awake()
     {
         currentHealth = startHealth;
+        healthSlider = GameObject.FindGameObjectsWithTag("HUD")[0].GetComponent<Slider>();
+        //healthSlider.enabled = false;
+        DontDestroyOnLoad(this);
     }
 	void Start () {
         currentHealth = startHealth;
-        healthSlider.enabled = false;
     }
 	
 	// Update is called once per frame

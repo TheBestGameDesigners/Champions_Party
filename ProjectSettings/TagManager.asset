@@ -14,6 +14,19 @@ TagManager:
   - Enemy
   - HUD
   - imagen
+  - Slot
+  - DraggingItem
+  - Slots
+  - Tooltip
+  - Hotbar
+  - EquipmentSystem
+  - MainInventory
+  - Canvas
+  - Timer
+  - Panel
+  - Item
+  - ItemIcon
+  - Border
   layers:
   - Default
   - TransparentFX

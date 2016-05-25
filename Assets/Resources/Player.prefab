@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa2a2ef70c2fbbf4192976fbf092dd95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentWeapon: {fileID: 0}
   bullet: {fileID: 126604, guid: 92a0a0120bb541e45b35658f6ea312b5, type: 2}
   bulletPosition: {fileID: 193718}
   speed: 5
@@ -161,7 +162,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHealth: 100
   currentHealth: 100
-  healthSlider: {fileID: 0}
 --- !u!212 &21247324
 SpriteRenderer:
   m_ObjectHideFlags: 1
