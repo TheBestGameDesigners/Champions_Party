@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour {
         body = GetComponent<Rigidbody2D>();
         body.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         body.interpolation = RigidbodyInterpolation2D.Extrapolate;
-        DontDestroyOnLoad(this);
+       // DontDestroyOnLoad(this);
 
     }
 

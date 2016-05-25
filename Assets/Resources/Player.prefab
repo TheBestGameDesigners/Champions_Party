@@ -162,6 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHealth: 100
   currentHealth: 100
+  healthSlider: {fileID: 0}
 --- !u!212 &21247324
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -48,9 +48,12 @@ public class EnemyHealth : MonoBehaviour
         
         if (currentHealth <= 0)
         {
-            float time = anim.runtimeAnimatorController.animationClips[1].length;
-            anim.SetBool("isDead", true);
-            Invoke("death", time);
+            if (anim.runtimeAnimatorController.animationClips.Length > 1)
+            {
+                float time = anim.runtimeAnimatorController.animationClips[1].length;
+                anim.SetBool("isDead", true);
+                Invoke("death", time);
+            }
         }
     }
 
