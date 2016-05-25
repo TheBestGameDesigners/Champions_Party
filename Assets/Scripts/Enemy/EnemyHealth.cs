@@ -15,14 +15,19 @@ public class EnemyHealth : MonoBehaviour
     public int remainingDamageFrames = 0;
     public int showDamageForFrames = 5;
     private Color originalColor;
+    GestorHitos gestor;
+    Animator anim;
 
-    void awake()
+    void Awake()
     {
-        originalColor = GetComponent<SpriteRenderer>().color;   
+        anim = GetComponent<Animator>();
+        
     }
     void Start()
     {
         currentHealth = startHealth;
+        //HUD = GameObject.FindGameObjectsWithTag("HUD")[0];
+        gestor = GameObject.FindGameObjectsWithTag("imagen")[0].GetComponent<GestorHitos>();
     }
 
     // Update is called once per frame
@@ -33,7 +38,7 @@ public class EnemyHealth : MonoBehaviour
             remainingDamageFrames--;
             if (remainingDamageFrames == 0)
             {
-                //GetComponent<SpriteRenderer>().color = originalColor;
+              
                 SpriteRenderer renderer = GetComponent<SpriteRenderer>();
                 renderer.color = new Color(1.0f, 1.0f, 1.0f);
             }
@@ -43,13 +48,24 @@ public class EnemyHealth : MonoBehaviour
     public void takeDamage(int damage)
     {
         currentHealth -= damage;
+        
         if (currentHealth <= 0)
-            death();
+        {
+            if (anim.runtimeAnimatorController.animationClips.Length > 1)
+            {
+                float time = anim.runtimeAnimatorController.animationClips[1].length;
+                anim.SetBool("isDead", true);
+                Invoke("death", time);
+            }
+        }
     }
 
     void death()
     { 
+        gestor.compruebaHitos(1, false, "");
+        Destroy(anim);
         Destroy(gameObject);
+        
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -64,7 +80,7 @@ public class EnemyHealth : MonoBehaviour
     void ShowDamage()
     {
         remainingDamageFrames = 5;
-        //GetComponent<SpriteRenderer>().color = Color.red;
+        
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
         renderer.color = new Color(1.0f, 0.0f, 0.0f);
     }
