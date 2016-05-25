@@ -13,9 +13,9 @@ public class GestorHitos : MonoBehaviour {
     }
 	void Start () {
         listaHitos = new ArrayList();
-        listaHitos.Add(new HitoArmas(10));
+       //listaHitos.Add(new HitoArmas(10));
         listaHitos.Add(new HitoMuertes(30));
-        listaHitos.Add(new HitoEncuentraArma("pistola"));
+      // listaHitos.Add(new HitoEncuentraArma("pistola"));
     }
 
     public void compruebaHitos(int dato, bool llegado, string arma)

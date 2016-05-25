@@ -35,6 +35,10 @@ public class PlayerInventory : MonoBehaviour
 
     int normalSize = 3;
 
+    void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
     public void OnEnable()
     {
         Inventory.ItemEquip += OnBackpack;

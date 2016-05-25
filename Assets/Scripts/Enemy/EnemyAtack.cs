@@ -11,18 +11,24 @@ public class EnemyAtack : MonoBehaviour {
     float timer;
 	// Use this for initialization
 	void Start () {
-        player = GameObject.FindGameObjectsWithTag("Player")[0];
-        p = player.GetComponent<PlayerHealth>();
+        if (GameObject.FindGameObjectsWithTag("Player").Length > 0)
+        {
+            player = GameObject.FindGameObjectsWithTag("Player")[0];
+            p = player.GetComponent<PlayerHealth>();
+        }
         timer = 0f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        timer += Time.deltaTime;
-
-        if(timer >= timeAttacks && playerInRange)
+        if (p != null)
         {
-            applyDamage();
+            timer += Time.deltaTime;
+
+            if (timer >= timeAttacks && playerInRange)
+            {
+                applyDamage();
+            }
         }
 	}
 
