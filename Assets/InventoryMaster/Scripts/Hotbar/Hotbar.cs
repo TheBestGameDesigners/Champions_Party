@@ -59,13 +59,16 @@ public class Hotbar : MonoBehaviour
             if (Input.GetKeyDown(keyCodesForSlots[i]))
             {
 
-                Item objeto = transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item;
+               
 
 
-                if (transform.GetChild(1).GetChild(i).childCount != 0 && objeto.itemType == ItemType.Weapon)
+                if (transform.GetChild(1).GetChild(i).childCount != 0 && transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item.itemType == ItemType.Weapon)
                 {
-                    GameObject.FindGameObjectWithTag("Player").GetComponent<playerShooting>().currentWeapon = objeto.itemModel;
-                  
+               
+
+                    GameObject model = transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item.itemModel;
+                    if (model)
+                        GameObject.FindGameObjectWithTag("Player").GetComponent<playerShooting>().currentWeapon= model;
 
                     /*
                     if (transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ConsumeItem>().duplication != null && transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item.maxStack == 1)
