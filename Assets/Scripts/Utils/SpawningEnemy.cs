@@ -17,7 +17,7 @@ public class SpawningEnemy : MonoBehaviour {
     {
         if (health.currentHealth <= 0)
             return;
-        if (numEnemies > 0)
+        if (numEnemies > 0 || numEnemies == -1)
         {
             int spawnIndex = Random.Range(0, spawnPoints.Length);
             Instantiate(enemy, spawnPoints[spawnIndex].position, spawnPoints[spawnIndex].rotation);
