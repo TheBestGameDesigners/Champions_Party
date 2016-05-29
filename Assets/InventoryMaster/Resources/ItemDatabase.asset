@@ -48,3 +48,15 @@ MonoBehaviour:
     indexItemInList: 999
     rarity: 0
     itemAttributes: []
+  - itemName: Shotgun
+    itemID: 3
+    itemDesc: Escopeta para reventar con 3 disparos
+    itemIcon: {fileID: 21300000, guid: 8895ddd70aa34004293249fa9195f7d3, type: 3}
+    itemModel: {fileID: 165848, guid: 156aa36a1541a5c4cb74669a495a9e84, type: 2}
+    itemValue: 1
+    itemType: 1
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []

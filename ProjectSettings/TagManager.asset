@@ -27,6 +27,7 @@ TagManager:
   - Item
   - ItemIcon
   - Border
+  - bulletPosition
   layers:
   - Default
   - TransparentFX

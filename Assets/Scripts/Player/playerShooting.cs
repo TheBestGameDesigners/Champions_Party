@@ -4,12 +4,10 @@ using System.Collections;
 public class playerShooting : MonoBehaviour {
 
     public GameObject currentWeapon;
-    public GameObject bullet;
     public GameObject bulletPosition;
     public GameObject colisionObj;
     public float speed;
     Animator anim;
-    float timer;
     float timerFire;
 
     private int anim_duration;
@@ -17,7 +15,7 @@ public class playerShooting : MonoBehaviour {
 
     void Awake() {
         anim = GetComponent<Animator>();
-        timer = 0f;
+        timerFire = 0f;
         anim_duration = 0; 
     }
     
@@ -30,7 +28,7 @@ public class playerShooting : MonoBehaviour {
     // Update is called once per frame
     void Update()
      {
-
+        timerFire += Time.deltaTime;
         /*
         bool isShooting = Input.GetMouseButton(0);
         timerFire += Time.deltaTime;
@@ -43,7 +41,7 @@ public class playerShooting : MonoBehaviour {
 
             if (anim_duration == 0) { 
                 anim.SetInteger("action", 0);
-                currentWeapon.GetComponent<Weapon>().Fire();
+                //currentWeapon.GetComponent<Weapon>().Fire();
 
             }
 
@@ -51,7 +49,7 @@ public class playerShooting : MonoBehaviour {
         }
 
         
-        if (Input.GetMouseButton(0) && currentWeapon) { 
+        if (Input.GetMouseButtonDown(0) && currentWeapon) { 
             anim.SetInteger("action", currentWeapon.GetComponent<Weapon>().Animation_frame);
             currentWeapon.GetComponent<Weapon>().Fire();
             anim_duration = 5;
