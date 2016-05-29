@@ -57,6 +57,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: knife
   Animation_frame: 1
+  cuerpoAcuerpo: 1
+  numBullet: 0
+  bullet: {fileID: 0}
+  bulletPosition: {fileID: 0}
+  speed: 0
 --- !u!212 &21295322
 SpriteRenderer:
   m_ObjectHideFlags: 1

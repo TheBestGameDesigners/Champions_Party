@@ -6,7 +6,7 @@ public class SpawningEnemy : MonoBehaviour {
     public PlayerHealth health;
     public GameObject enemy;
     public float spawnTime;
-    public Transform[] spawnPoints;
+    public GameObject[] spawnPoints;
     public int numEnemies;
     // Use this for initialization
 	void Start () {
@@ -20,8 +20,15 @@ public class SpawningEnemy : MonoBehaviour {
         if (numEnemies > 0 || numEnemies == -1)
         {
             int spawnIndex = Random.Range(0, spawnPoints.Length);
-            Instantiate(enemy, spawnPoints[spawnIndex].position, spawnPoints[spawnIndex].rotation);
-            numEnemies--;
+            if (spawnPoints[spawnIndex] != null)
+            {
+                pointSpawn p = spawnPoints[spawnIndex].GetComponent<pointSpawn>();
+                if (!p.visible)
+                {
+                    Instantiate(enemy, spawnPoints[spawnIndex].transform.position, spawnPoints[spawnIndex].transform.rotation);
+                    numEnemies--;
+                }
+            }
         }
         else
             return;
