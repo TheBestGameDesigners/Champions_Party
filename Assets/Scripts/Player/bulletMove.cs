@@ -18,7 +18,7 @@ public class bulletMove : MonoBehaviour {
         Destroy(gameObject);
     }
 
-    void OnBecomeInvisible()
+    void OnBecameInvisible()
     {
         Destroy(gameObject);
     }
