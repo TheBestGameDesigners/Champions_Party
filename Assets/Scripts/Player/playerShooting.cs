@@ -6,6 +6,7 @@ public class playerShooting : MonoBehaviour {
     public GameObject currentWeapon;
     public GameObject bullet;
     public GameObject bulletPosition;
+    public GameObject colisionObj;
     public float speed;
     Animator anim;
     float timer;
@@ -22,27 +23,10 @@ public class playerShooting : MonoBehaviour {
     
     void Start()
     {
-
+        colisionObj = null;
     }
 
-    void Fire()
-    {
-        /*GameObject bulletP = (GameObject)Instantiate(bullet);
-        bulletP.transform.position = bulletPosition.transform.position;*/
-
-       // if (timerFire > 0.5f)
-        //{
-            Vector3 shootDirection;
-            shootDirection = Input.mousePosition;
-            shootDirection.z = 0.0f;
-            shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
-            shootDirection = shootDirection - transform.position;
-            //...instantiating the rocket
-            Rigidbody2D bulletInstance = (Rigidbody2D)Instantiate(bullet.GetComponent<Rigidbody2D>(), bulletPosition.transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
-            bulletInstance.velocity = new Vector2(shootDirection.x * speed, shootDirection.y * speed);
-            timerFire = 0f;
-        //}
-    }
+    
     // Update is called once per frame
     void Update()
      {
@@ -59,7 +43,7 @@ public class playerShooting : MonoBehaviour {
 
             if (anim_duration == 0) { 
                 anim.SetInteger("action", 0);
-                Fire();
+                currentWeapon.GetComponent<Weapon>().Fire();
 
             }
 
@@ -69,9 +53,20 @@ public class playerShooting : MonoBehaviour {
         
         if (Input.GetMouseButton(0) && currentWeapon) { 
             anim.SetInteger("action", currentWeapon.GetComponent<Weapon>().Animation_frame);
+            currentWeapon.GetComponent<Weapon>().Fire();
             anim_duration = 5;
         }
 
 
+    }
+
+    void OnCollisionStay2D(Collision2D col)
+    {
+        colisionObj = col.gameObject;
+    }
+
+    void OnCollisionExit2D(Collision2D col)
+    {
+        colisionObj = null;
     }
 }
