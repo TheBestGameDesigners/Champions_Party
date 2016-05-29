@@ -11,10 +11,14 @@ public class bulletMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
 	}
 
     void OnTriggerEnter2D(Collider2D other)
+    {
+        Destroy(gameObject);
+    }
+
+    void OnBecomeInvisible()
     {
         Destroy(gameObject);
     }
