@@ -59,16 +59,16 @@ public class Hotbar : MonoBehaviour
             if (Input.GetKeyDown(keyCodesForSlots[i]))
             {
 
-               
+
 
 
                 if (transform.GetChild(1).GetChild(i).childCount != 0 && transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item.itemType == ItemType.Weapon)
                 {
-               
+
 
                     GameObject model = transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item.itemModel;
                     if (model)
-                        GameObject.FindGameObjectWithTag("Player").GetComponent<playerShooting>().currentWeapon= model;
+                        GameObject.FindGameObjectWithTag("Player").GetComponent<playerShooting>().currentWeapon = model;
 
                     /*
                     if (transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ConsumeItem>().duplication != null && transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item.maxStack == 1)
@@ -79,9 +79,19 @@ public class Hotbar : MonoBehaviour
                     */
                 }
 
-    
+                if (transform.GetChild(1).GetChild(i).childCount != 0 && transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item.itemType == ItemType.Ammo)
+                {
+                    GameObject model = transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item.itemModel;
+                    model.GetComponent<bonusBullet>().actionBox();
+                    if (transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ConsumeItem>().duplication != null && transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item.maxStack == 1)
+                    {
+                        Destroy(transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ConsumeItem>().duplication);
+                    }
+                    transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ConsumeItem>().consumeIt();
+                }
             }
         }
+
     }
 
     public int getSlotsInTotal()
