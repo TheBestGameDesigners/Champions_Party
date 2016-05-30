@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Weapon : MonoBehaviour {
@@ -7,11 +8,12 @@ public class Weapon : MonoBehaviour {
     public string name;
     public int Animation_frame;
     public bool cuerpoAcuerpo;
+    public int numBulletInstanciate;
     public int numBullet;
     public GameObject bullet;
     GameObject bulletPosition;
     public float speed;
-   
+
 
 
     // Use this for initialization
@@ -26,19 +28,34 @@ public class Weapon : MonoBehaviour {
         bulletP.transform.position = bulletPosition.transform.position;*/
         if (!cuerpoAcuerpo)
         {
-            Vector3 shootDirection;
-            shootDirection = Input.mousePosition;
-            shootDirection.z = 0.0f;
-            shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
-            shootDirection = shootDirection - GameObject.FindGameObjectsWithTag("Player")[0].transform.position;
-
-            bulletPosition = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<playerShooting>().bulletPosition;
-            //...instantiating the rocket
-            for (int i = 0; i < numBullet; i++)
+            if (numBullet > 0)
             {
-                Rigidbody2D bulletInstance = (Rigidbody2D)Instantiate(bullet.GetComponent<Rigidbody2D>(), bulletPosition.transform.position, Quaternion.Euler(new Vector3(0 , 0 , 0)));
-                bulletInstance.velocity = new Vector2(shootDirection.x * speed, shootDirection.y * speed);
+                Vector3 shootDirection;
+                shootDirection = Input.mousePosition;
+                shootDirection.z = 0.0f;
+                shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
+                shootDirection = shootDirection - GameObject.FindGameObjectsWithTag("Player")[0].transform.position;
+
+                bulletPosition = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<playerShooting>().bulletPosition;
+                //...instantiating the rocket
+                Vector3 v = new Vector3(30, 30, 0);
+                for (int i = 0; i < numBulletInstanciate; i++)
+                {
+                    if (i != 0)
+                    {
+                        shootDirection += v;
+                        v = -v;
+                    }
+                    GameObject bulletInstance = (GameObject)Instantiate(bullet, bulletPosition.transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+                    bulletInstance.GetComponent<Rigidbody2D>().velocity = new Vector2(shootDirection.x * speed, shootDirection.y * speed);
+                    numBullet--;
+                }
             }
+            else
+            {
+                //texto.text = "No tienes balas";
+            }
+            
         }
         else
         {
