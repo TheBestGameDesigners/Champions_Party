@@ -5,10 +5,8 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/MainMenu.unity
   - enabled: 1
-    path: Assets/Scenes/MainMenuVol.unity
+    path: Assets/Scenes/MainMenuRedim.unity
   - enabled: 1
     path: Assets/Scenes/Castellana.unity
   - enabled: 1
