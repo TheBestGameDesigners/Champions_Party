@@ -6,18 +6,13 @@ public class PlayerHealth : MonoBehaviour {
 
     public int startHealth = 100;
     public int currentHealth;
-    public Slider healthSlider;
+    Slider healthSlider;
 	// Use this for initialization
 
-    void Awake()
-    {
-        currentHealth = startHealth;
-        //healthSlider = GameObject.FindGameObjectsWithTag("HUD")[0].GetComponent<Slider>();
-       //healthSlider.enabled = false;
-       // DontDestroyOnLoad(this);
-    }
 	void Start () {
         currentHealth = startHealth;
+        //GameObject hud = GameObject.FindGameObjectsWithTag("HUD")[0];
+        healthSlider = GameObject.FindGameObjectsWithTag("HUD")[0].transform.Find("Slider").GetComponent<Slider>();
         healthSlider.value = currentHealth;
         healthSlider.enabled = false;
     }

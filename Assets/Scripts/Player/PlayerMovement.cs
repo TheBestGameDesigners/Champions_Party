@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour {
 
 
     void Awake(){
+        DontDestroyOnLoad(this);
         body = GetComponent<Rigidbody2D>();
         body.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         body.interpolation = RigidbodyInterpolation2D.Extrapolate;

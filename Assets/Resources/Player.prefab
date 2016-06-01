@@ -154,7 +154,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWeapon: {fileID: 0}
-  bullet: {fileID: 126604, guid: 92a0a0120bb541e45b35658f6ea312b5, type: 2}
   bulletPosition: {fileID: 193718}
   colisionObj: {fileID: 0}
   speed: 0
@@ -206,8 +205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0db4493228a4ba442a891316e3ee246f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
-  characterSystem: {fileID: 0}
+  inventory: {fileID: 108208, guid: 1a286ece1a452b544ad303f4b96ff251, type: 2}
+  characterSystem: {fileID: 108208, guid: 1a286ece1a452b544ad303f4b96ff251, type: 2}
   craftSystem: {fileID: 0}
   HPMANACanvas: {fileID: 0}
   currentHealth: 60
@@ -242,7 +241,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHealth: 100
   currentHealth: 100
-  healthSlider: {fileID: 0}
 --- !u!212 &21247324
 SpriteRenderer:
   m_ObjectHideFlags: 1

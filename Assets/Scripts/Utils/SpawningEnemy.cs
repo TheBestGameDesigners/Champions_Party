@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SpawningEnemy : MonoBehaviour {
 
-    public PlayerHealth health;
+    PlayerHealth health;
     public GameObject enemy;
     public float spawnTime;
     public GameObject[] spawnPoints;
@@ -11,6 +11,7 @@ public class SpawningEnemy : MonoBehaviour {
     // Use this for initialization
 	void Start () {
         InvokeRepeating("spawnEnemy", spawnTime, spawnTime);
+        health = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerHealth>();
 	}
 	
     void spawnEnemy()

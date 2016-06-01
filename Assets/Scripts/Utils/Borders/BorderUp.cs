@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEngine.SceneManagement;
+using UnityEngine;
 using System.Collections;
 
 public class BorderUp : MonoBehaviour {
@@ -16,6 +17,6 @@ public class BorderUp : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Player"))
-            Application.LoadLevel(2);
+            SceneManager.LoadScene(3);
     }
 }

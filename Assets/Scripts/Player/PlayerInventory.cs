@@ -38,6 +38,7 @@ public class PlayerInventory : MonoBehaviour
     void Awake()
     {
         DontDestroyOnLoad(this);
+        
     }
     public void OnEnable()
     {
@@ -161,6 +162,8 @@ public class PlayerInventory : MonoBehaviour
 
     void Start()
     {
+        inventory = GameObject.FindGameObjectsWithTag("MainInventory")[0];
+        characterSystem = GameObject.FindGameObjectsWithTag("EquipmentSystem")[0];
         //if (HPMANACanvas != null)
         //{
         //    hpText = HPMANACanvas.transform.GetChild(1).GetChild(0).GetComponent<Text>();

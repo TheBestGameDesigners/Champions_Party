@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class MuestraHitos : MonoBehaviour {
-    public Text textoHUD;
+    Text textoHUD;
     GestorHitos gh;
     public GameObject game;
     Hito h;
@@ -18,6 +18,7 @@ public class MuestraHitos : MonoBehaviour {
         gh = game.GetComponent<GestorHitos>();
         lista = null;
         h = null;
+        textoHUD = GameObject.FindGameObjectsWithTag("HUD")[0].transform.Find("Text").GetComponent<Text>();
     }
     void Start()
     {

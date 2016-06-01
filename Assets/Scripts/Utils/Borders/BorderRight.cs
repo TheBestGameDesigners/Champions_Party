@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class BorderRight : MonoBehaviour {
@@ -16,6 +17,6 @@ public class BorderRight : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Player"))
-            Application.LoadLevel(3);
+             SceneManager.LoadScene(2);
     }
 }
