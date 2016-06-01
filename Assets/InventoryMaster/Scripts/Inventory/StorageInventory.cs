@@ -19,8 +19,6 @@ public class StorageInventory : MonoBehaviour
     [SerializeField]
     private ItemDataBaseList itemDatabase;
 
-    [SerializeField]
-    public int distanceToOpenStorage;
 
     public float timeToOpenStorage;
 
@@ -64,6 +62,7 @@ public class StorageInventory : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player");
         inv = inventory.GetComponent<Inventory>();
+
         ItemDataBaseList inventoryItemList = (ItemDataBaseList)Resources.Load("ItemDatabase");
 
         int creatingItemsForChest = 1;
@@ -174,11 +173,6 @@ public class StorageInventory : MonoBehaviour
             timerImage.fillAmount = 0;
             timer.SetActive(false);
             showTimer = false;
-
-
-
-
-
         }
 
 
