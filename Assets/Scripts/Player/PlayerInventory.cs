@@ -162,8 +162,8 @@ public class PlayerInventory : MonoBehaviour
 
     void Start()
     {
-        inventory = GameObject.FindGameObjectsWithTag("MainInventory")[0];
-        characterSystem = GameObject.FindGameObjectsWithTag("EquipmentSystem")[0];
+        //mainInventory = GameObject.FindGameObjectsWithTag("MainInventory")[0];
+        //characterSystem = GameObject.FindGameObjectsWithTag("EquipmentSystem")[0];
         //if (HPMANACanvas != null)
         //{
         //    hpText = HPMANACanvas.transform.GetChild(1).GetChild(0).GetComponent<Text>();
@@ -187,6 +187,24 @@ public class PlayerInventory : MonoBehaviour
             toolTip = GameObject.FindGameObjectWithTag("Tooltip").GetComponent<Tooltip>();
         if (inventory != null)
             mainInventory = inventory.GetComponent<Inventory>();
+        if (characterSystem != null)
+            characterSystemInventory = characterSystem.GetComponent<Inventory>();
+        if (craftSystem != null)
+            craftSystemInventory = craftSystem.GetComponent<Inventory>();
+    }
+
+    public void creaInventory(GameObject inventario)
+    {
+        if (inputManagerDatabase == null)
+            inputManagerDatabase = (InputManager)Resources.Load("InputManager");
+
+        if (craftSystem != null)
+            cS = craftSystem.GetComponent<CraftSystem>();
+
+        if (GameObject.FindGameObjectWithTag("Tooltip") != null)
+            toolTip = GameObject.FindGameObjectWithTag("Tooltip").GetComponent<Tooltip>();
+        if (inventory != null)
+            mainInventory = inventario.GetComponent<Inventory>();
         if (characterSystem != null)
             characterSystemInventory = characterSystem.GetComponent<Inventory>();
         if (craftSystem != null)

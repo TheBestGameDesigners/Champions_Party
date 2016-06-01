@@ -205,11 +205,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0db4493228a4ba442a891316e3ee246f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 108208, guid: 1a286ece1a452b544ad303f4b96ff251, type: 2}
-  characterSystem: {fileID: 108208, guid: 1a286ece1a452b544ad303f4b96ff251, type: 2}
+  inventory: {fileID: 185080, guid: 1a286ece1a452b544ad303f4b96ff251, type: 2}
+  characterSystem: {fileID: 100004, guid: c09ae6926a2cd6148958f03f14572c54, type: 2}
   craftSystem: {fileID: 0}
   HPMANACanvas: {fileID: 0}
-  currentHealth: 60
+  currentHealth: 100
 --- !u!114 &11481368
 MonoBehaviour:
   m_ObjectHideFlags: 1

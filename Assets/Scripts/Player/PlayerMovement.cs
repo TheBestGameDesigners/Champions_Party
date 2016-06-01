@@ -55,10 +55,4 @@ public class PlayerMovement : MonoBehaviour {
         transform.position = pos;
         //Manager.m.PlayerTransform.position = pos;
     }
-
-    void OnDestroy()
-    {
-        Manager.m.PlayerTransform.position = transform.position;
-    }
-
 }

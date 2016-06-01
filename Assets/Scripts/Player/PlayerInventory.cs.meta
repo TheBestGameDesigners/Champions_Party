@@ -1,8 +1,16 @@
 fileFormatVersion: 2
 guid: 0db4493228a4ba442a891316e3ee246f
+timeCreated: 1464809117
+licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - inventory: {fileID: 100006, guid: a58e4d3c31368a64eb9518488df4e15a, type: 2}
+  - characterSystem: {fileID: 100004, guid: c09ae6926a2cd6148958f03f14572c54, type: 2}
+  - craftSystem: {fileID: 171414, guid: 1dfb12bfd7dc77649953ab74c5ce6c50, type: 2}
+  - HPMANACanvas: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 
