@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour {
 
 
     void Awake(){
-        DontDestroyOnLoad(this);
         body = GetComponent<Rigidbody2D>();
         body.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         body.interpolation = RigidbodyInterpolation2D.Extrapolate;
@@ -23,16 +22,22 @@ public class PlayerMovement : MonoBehaviour {
 
     }
 
+    void Start()
+    {
+        Vector3 posicion = Manager.m.PlayerTransform.position;
+        transform.position = posicion;
+    }
+
     void FixedUpdate() {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 
         Move(x, y);
-
         // Rotate player
         var objectPos = Camera.main.WorldToScreenPoint(transform.position);
         var dir = Input.mousePosition - objectPos;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg));
+       // Manager.m.PlayerTransform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg));
     }
 	
 
@@ -43,12 +48,17 @@ public class PlayerMovement : MonoBehaviour {
         // Set the movement vector based on the axis input.
         movement.Set(h, v);
 
-
+        
         Vector3 pos = transform.position;
         pos.x += h * speed * Time.deltaTime;
         pos.y += v * speed * Time.deltaTime;
         transform.position = pos;
-      
+        //Manager.m.PlayerTransform.position = pos;
+    }
+
+    void OnDestroy()
+    {
+        Manager.m.PlayerTransform.position = transform.position;
     }
 
 }

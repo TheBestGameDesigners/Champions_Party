@@ -10,7 +10,7 @@ public class PlayerHealth : MonoBehaviour {
 	// Use this for initialization
 
 	void Start () {
-        currentHealth = startHealth;
+        currentHealth = Manager.m.healthPlayer;
         //GameObject hud = GameObject.FindGameObjectsWithTag("HUD")[0];
         healthSlider = GameObject.FindGameObjectsWithTag("HUD")[0].transform.Find("Slider").GetComponent<Slider>();
         healthSlider.value = currentHealth;
@@ -26,7 +26,7 @@ public class PlayerHealth : MonoBehaviour {
     {
         currentHealth -= damage;
         healthSlider.value = currentHealth;
-
+        Manager.m.healthPlayer = currentHealth;
         if (currentHealth <= 0)
             death();
     }
