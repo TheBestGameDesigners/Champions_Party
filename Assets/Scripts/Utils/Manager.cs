@@ -26,8 +26,9 @@ public class Manager : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
-	    
-	}
+        CheckInventory();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -54,6 +55,21 @@ public class Manager : MonoBehaviour {
                 player.transform.position = player.transform.position + new Vector3(6200, 0, 0);
             /*else
                 Destroy(player);*/
+        }
+
+
+
+        CheckInventory();
+    }
+
+    void CheckInventory()
+    {
+        if (player != null)
+        {
+            PlayerInventory pInvent = player.GetComponent <PlayerInventory> ();
+            pInvent.setInput();
+
+        
         }
     }
 }
