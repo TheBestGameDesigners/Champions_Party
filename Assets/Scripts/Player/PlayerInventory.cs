@@ -40,6 +40,13 @@ public class PlayerInventory : MonoBehaviour
         DontDestroyOnLoad(this);
         
     }
+
+    public void setInput()
+    {
+
+        inputManagerDatabase = (InputManager)Resources.Load("InputManager");
+
+    }
     public void OnEnable()
     {
         Inventory.ItemEquip += OnBackpack;
