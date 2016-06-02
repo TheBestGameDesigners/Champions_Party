@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class moveTrophy : MonoBehaviour {
@@ -15,7 +16,7 @@ public class moveTrophy : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        Application.LoadLevel(4);
+        SceneManager.LoadScene(4);
        // Destroy(gameObject);
     }
 }
