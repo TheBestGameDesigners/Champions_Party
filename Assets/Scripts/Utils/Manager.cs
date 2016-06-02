@@ -68,7 +68,7 @@ public class Manager : MonoBehaviour {
         if (player != null)
         {
             PlayerInventory pInvent = player.GetComponent <PlayerInventory> ();
-            pInvent.setInput();
+            pInvent.Start();
 
         
         }
