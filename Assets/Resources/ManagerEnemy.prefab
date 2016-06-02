@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 481890}
-  - 114: {fileID: 11467090}
+  - 114: {fileID: 11411780}
   m_Layer: 0
   m_Name: ManagerEnemy
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11467090
+--- !u!114 &11411780
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -39,7 +39,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5011ae42489dbe449661e491038f05d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 11481556, guid: 54ebf5b18124a7a429106cd2cb2f6be5, type: 2}
   enemy: {fileID: 158724, guid: 6caf1fdfca6f8fa468dcd596dbb2f5ae, type: 2}
   spawnTime: 3
   spawnPoints:
@@ -47,14 +46,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  numEnemies: 30
+  numEnemies: 40
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

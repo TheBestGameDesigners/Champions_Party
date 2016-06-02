@@ -51,7 +51,8 @@ public class Main : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
-        Manager.m.PlayerTransform = GameObject.FindGameObjectsWithTag("Player")[0].transform;
+        if (GameObject.FindGameObjectsWithTag("Player")[0] != null)
+            Manager.m.PlayerTransform = GameObject.FindGameObjectsWithTag("Player")[0].transform;
     }
 
     
