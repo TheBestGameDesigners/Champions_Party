@@ -18,7 +18,7 @@ public class MuestraHitos : MonoBehaviour {
         gh = game.GetComponent<GestorHitos>();
         lista = null;
         h = null;
-        textoHUD = GameObject.FindGameObjectsWithTag("HUD")[0].transform.Find("Text").GetComponent<Text>();
+        textoHUD = GameObject.FindGameObjectsWithTag("HUD")[0].transform.Find("Image").transform.Find("Text").GetComponent<Text>();
     }
     void Start()
     {
