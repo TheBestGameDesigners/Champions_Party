@@ -46,14 +46,9 @@ public class Main : MonoBehaviour {
 	
     void Start()
     {
-<<<<<<< HEAD
-        //player.GetComponent<PlayerInventory>().creaInventory(inventario);
-        //player.GetComponent<PlayerInventory>().inventory = Manager.m.Inventory;
-        //player.GetComponent<PlayerInventory>().characterSystem = Manager.m.Inventory;
-=======
         player.GetComponent<PlayerInventory>().inventory = GameObject.FindGameObjectsWithTag("MainInventory")[0];
         player.GetComponent<PlayerInventory>().characterSystem = GameObject.FindGameObjectsWithTag("EquipmentSystem")[0];
->>>>>>> inventoryFix
+
     }
 	// Update is called once per frame
 	void Update () {
