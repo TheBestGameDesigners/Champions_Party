@@ -13,6 +13,7 @@ public class Manager : MonoBehaviour {
     public GameObject player;
     public GameObject Inventory;
     public GameObject HUD;
+    public GameObject Pause;
 
     void Awake()
     {

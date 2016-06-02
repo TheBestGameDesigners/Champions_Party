@@ -9,9 +9,11 @@ public class Main : MonoBehaviour {
     GameObject player;
     GameObject inventario;
     GameObject HUD;
+    GameObject Pause;
     public GameObject playerPrefab;
     public GameObject InventoryPrefab;
     public GameObject HUDPrefab;
+    public GameObject PausePrefab;
 
     void Awake()
     { 
@@ -20,6 +22,12 @@ public class Main : MonoBehaviour {
         {
             HUD = (GameObject) Instantiate(HUDPrefab);
             Manager.m.HUD = HUD;
+
+        }
+        if (!Manager.m.Pause)
+        {
+            Pause = (GameObject)Instantiate(PausePrefab);
+            Manager.m.Pause = Pause;
 
         }
 
