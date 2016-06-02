@@ -3,6 +3,8 @@ using System.Collections;
 
 public class CarMove : MonoBehaviour {
 
+    public int speed;
+    public bool sentidoUp;
 	// Use this for initialization
 	void Start () {
         
@@ -11,9 +13,10 @@ public class CarMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Vector2 v2 = gameObject.transform.position;
-
-        v2 += Vector2.up * Time.deltaTime * 500;
-
+    if(sentidoUp)
+        v2 += Vector2.up * Time.deltaTime * speed;
+    else
+        v2 += Vector2.down * Time.deltaTime * speed;
         gameObject.transform.position = v2;
 
     }

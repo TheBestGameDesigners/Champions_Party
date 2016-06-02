@@ -167,8 +167,9 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    void Start()
+    public void Start()
     {
+<<<<<<< HEAD
         //mainInventory = GameObject.FindGameObjectsWithTag("MainInventory")[0];
         //characterSystem = GameObject.FindGameObjectsWithTag("EquipmentSystem")[0];
         //if (HPMANACanvas != null)
@@ -179,10 +180,11 @@ public class PlayerInventory : MonoBehaviour
 
         //    hpImage = HPMANACanvas.transform.GetChild(1).GetComponent<Image>();
         //    manaImage = HPMANACanvas.transform.GetChild(1).GetComponent<Image>();
+=======
+        inventory = GameObject.FindGameObjectsWithTag("MainInventory")[0];
+        characterSystem = GameObject.FindGameObjectsWithTag("EquipmentSystem")[0];
+>>>>>>> inventoryFix
 
-        //    UpdateHPBar();
-        //    UpdateManaBar();
-        //}
 
         if (inputManagerDatabase == null)
             inputManagerDatabase = (InputManager)Resources.Load("InputManager");
@@ -200,6 +202,7 @@ public class PlayerInventory : MonoBehaviour
             craftSystemInventory = craftSystem.GetComponent<Inventory>();
     }
 
+<<<<<<< HEAD
     public void creaInventory(GameObject inventario)
     {
         if (inputManagerDatabase == null)
@@ -232,6 +235,8 @@ public class PlayerInventory : MonoBehaviour
     //    manaImage.fillAmount = fillAmount;
     //}
 
+=======
+>>>>>>> inventoryFix
 
     public void OnConsumeItem(Item item)
     {
