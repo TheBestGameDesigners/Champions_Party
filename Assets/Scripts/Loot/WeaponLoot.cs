@@ -15,19 +15,12 @@ public class WeaponLoot : MonoBehaviour
 
         inventoryItemList = (ItemDataBaseList)Resources.Load("ItemDatabase");
 
-       
+        for (int i = 0; i < inventoryItemList.itemList.Count; i++)
+        {
+            GetComponent<StorageInventory>().addItemToStorage(i, 1);
 
-            int randomNumber = Random.Range(1, inventoryItemList.itemList.Count - 1);
-
-
-          
-                GameObject randomLootItem = (GameObject)Instantiate(inventoryItemList.itemList[0].itemModel);
-                PickUpItem item = randomLootItem.AddComponent<PickUpItem>();
-                item.item = inventoryItemList.itemList[0];
-
-          
-                
-
+        }
+            
     }
 
 }
