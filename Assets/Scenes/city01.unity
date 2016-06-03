@@ -3,7 +3,7 @@
 --- !u!29 &1
 SceneSettings:
   m_ObjectHideFlags: 0
-  m_PVSData: 
+  m_PVSData:
   m_PVSObjectsArray: []
   m_PVSPortalsArray: []
   m_OcclusionBakeSettings:
@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7a48ab95df512941b9d31d8fca02b88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!1001 &244996003
 Prefab:
   m_ObjectHideFlags: 0
@@ -183,7 +183,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11417412, guid: fa343d5ccfd5ad04b894e3a8814a6fb5, type: 2}
       propertyPath: Bounds
-      value: 
+      value:
       objectReference: {fileID: 1251534633}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa343d5ccfd5ad04b894e3a8814a6fb5, type: 2}
@@ -336,5 +336,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56c36f37b2b01de4b99bdee024e0ad17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
