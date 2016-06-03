@@ -27,12 +27,14 @@ public class PlayerHealth : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         cont = anim.runtimeAnimatorController.animationClips.Length;
+        currentHealth = Manager.m.healthPlayer;
+        healthSlider.value = currentHealth;
     }
 
     public void takeDamage(int damage)
     {
         currentHealth -= damage;
-        healthSlider.value = currentHealth;
+        //healthSlider.value = currentHealth;
         Manager.m.healthPlayer = currentHealth;
         if (currentHealth <= 0)
         {
