@@ -16,7 +16,8 @@ public class moveTrophy : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        SceneManager.LoadScene(4);
+        if(col.gameObject.CompareTag("Player"))
+         SceneManager.LoadScene(4);
        // Destroy(gameObject);
     }
 }

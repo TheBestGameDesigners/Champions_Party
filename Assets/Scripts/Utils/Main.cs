@@ -40,7 +40,7 @@ public class Main : MonoBehaviour {
 
         if (!Manager.m.player)
         {
-            player = (GameObject)Instantiate(playerPrefab, new Vector3(5000, -970, 0), Quaternion.Euler(0, 0, 0));
+            player = (GameObject)Instantiate(playerPrefab, new Vector3(1900, -5700, 0), Quaternion.Euler(0, 0, 0));
             player.tag = "Player";
             Manager.m.player = player;
 

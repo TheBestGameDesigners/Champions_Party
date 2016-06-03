@@ -7,9 +7,10 @@ public class PlayerMovement : MonoBehaviour {
 	
 	
 	public float speed = 6f;
+    public float initialSpeed;
+    public bool iceMan;
 
-
-   
+    public float timeIceMan;
     Vector2 movement; //guarda la direccion del jugador
     private Rigidbody2D body;
 
@@ -26,6 +27,19 @@ public class PlayerMovement : MonoBehaviour {
     {
         Vector3 posicion = Manager.m.PlayerTransform.position;
         transform.position = posicion;
+        initialSpeed = speed;
+    }
+
+    void Update()
+    {
+        if (iceMan)
+        {
+            timeIceMan -= Time.deltaTime;
+            if(timeIceMan <= 0)
+            {
+                speed = initialSpeed;
+            }
+        }
     }
 
     void FixedUpdate() {

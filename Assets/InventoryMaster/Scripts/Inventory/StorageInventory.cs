@@ -45,7 +45,13 @@ public class StorageInventory : MonoBehaviour
     public void addItemToStorage(int id, int value)
     {
         Item item = itemDatabase.getItemByID(id);
+        
         item.itemValue = value;
+        storageItems.Add(item);
+    }
+
+    public void addItem(Item item)
+    {
         storageItems.Add(item);
     }
 
