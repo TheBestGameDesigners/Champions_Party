@@ -89,6 +89,19 @@ public class Hotbar : MonoBehaviour
                     }
                     transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ConsumeItem>().consumeIt();
                 }
+
+                if (transform.GetChild(1).GetChild(i).childCount != 0 && transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item.itemType == ItemType.Consumable)
+                {
+                    GameObject model = transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item.itemModel;
+                    model.GetComponent<firstAid>().FirstAid();
+                    if (transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ConsumeItem>().duplication != null && transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item.maxStack == 1)
+                    {
+                        Destroy(transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ConsumeItem>().duplication);
+                    }
+                    transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ConsumeItem>().consumeIt();
+                }
+
+
             }
         }
 
