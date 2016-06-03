@@ -19,8 +19,6 @@ public class StorageInventory : MonoBehaviour
     [SerializeField]
     private ItemDataBaseList itemDatabase;
 
-    [SerializeField]
-    public int distanceToOpenStorage;
 
     public float timeToOpenStorage;
 
@@ -53,11 +51,18 @@ public class StorageInventory : MonoBehaviour
 
     void Start()
     {
+        /* COGEMOS EL INVENTARIO ACTUAL DE LA ESCENA (LO CREA LA CAMARA)*/
+
+        if (inventory == null)
+            inventory = GameObject.FindWithTag("Panel");
+
+
         if (inputManagerDatabase == null)
             inputManagerDatabase = (InputManager)Resources.Load("InputManager");
 
         player = GameObject.FindGameObjectWithTag("Player");
         inv = inventory.GetComponent<Inventory>();
+
         ItemDataBaseList inventoryItemList = (ItemDataBaseList)Resources.Load("ItemDatabase");
 
         int creatingItemsForChest = 1;
@@ -99,7 +104,7 @@ public class StorageInventory : MonoBehaviour
     void Update()
     {
 
-        float distance = Vector3.Distance(this.gameObject.transform.position, player.transform.position);
+        //float distance = Vector3.Distance(this.gameObject.transform.position, player.transform.position);
 
         if (showTimer)
         {
@@ -111,6 +116,7 @@ public class StorageInventory : MonoBehaviour
             }
         }
 
+        /*
         if (distance <= distanceToOpenStorage && Input.GetKeyDown(inputManagerDatabase.StorageKeyCode))
         {
             showStorage = !showStorage;
@@ -131,8 +137,54 @@ public class StorageInventory : MonoBehaviour
             timerImage.fillAmount = 0;
             timer.SetActive(false);
             showTimer = false;
-        }
+        }*/
     }
+
+
+    void OnCollisionStay2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Player")
+        {
+
+            if (Input.GetKeyDown(inputManagerDatabase.StorageKeyCode))
+            {
+                Debug.Log("me meto");
+                showStorage = !showStorage;
+                StartCoroutine(OpenInventoryWithTimer());
+            }
+        }
+           
+
+    }
+
+    void OnCollisionExit2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Player")
+        {
+            showStorage = false;
+            if (inventory.activeSelf)
+            {
+                storageItems.Clear();
+                setListofStorage();
+                inventory.SetActive(false);
+                inv.deleteAllItems();
+            }
+            tooltip.deactivateTooltip();
+            timerImage.fillAmount = 0;
+            timer.SetActive(false);
+            showTimer = false;
+        }
+
+
+    }
+
+
+
+
+
+
+
+
 
     IEnumerator OpenInventoryWithTimer()
     {
