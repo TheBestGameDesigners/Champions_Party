@@ -59,7 +59,7 @@ MonoBehaviour:
   Animation_frame: 2
   cuerpoAcuerpo: 0
   numBulletInstanciate: 1
-  numBullet: 100
+  numBullet: 35
   bullet: {fileID: 126604, guid: 92a0a0120bb541e45b35658f6ea312b5, type: 2}
   speed: 5
 --- !u!212 &21267240

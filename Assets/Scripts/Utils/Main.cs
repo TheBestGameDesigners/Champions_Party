@@ -7,38 +7,62 @@ public class Main : MonoBehaviour {
     // Use this for initialization
 
     GameObject player;
+    GameObject inventario;
+    GameObject HUD;
+    GameObject Pause;
     public GameObject playerPrefab;
     public GameObject InventoryPrefab;
+    public GameObject HUDPrefab;
+    public GameObject PausePrefab;
 
     void Awake()
-    {
-        DontDestroyOnLoad(this);
-        //if(SceneManager.GetActiveScene().buildIndex == 1)
-            player = (GameObject)Instantiate(playerPrefab, new Vector3(1579, -970, -1), Quaternion.Euler(0, 0, 0));
-        player.tag = "Player";
-        Instantiate(InventoryPrefab);
+    { 
+
+        if (!Manager.m.HUD)
+        {
+            HUD = (GameObject) Instantiate(HUDPrefab);
+            Manager.m.HUD = HUD;
+
+        }
+        if (!Manager.m.Pause)
+        {
+            Pause = (GameObject)Instantiate(PausePrefab);
+            Manager.m.Pause = Pause;
+
+        }
+
+        if (!Manager.m.Inventory)
+        {
+            inventario = (GameObject)Instantiate(InventoryPrefab);
+            Manager.m.Inventory = inventario;
+
+        }
+
+        if (!Manager.m.player)
+        {
+            player = (GameObject)Instantiate(playerPrefab, new Vector3(5000, -970, 0), Quaternion.Euler(0, 0, 0));
+            player.tag = "Player";
+            Manager.m.player = player;
+
+        }
+        else
+            player = Manager.m.player;
+        
+        Manager.m.PlayerTransform = player.transform;
+
     }
-	void Start () {
-        player = GameObject.FindGameObjectsWithTag("Player")[0];
-	}
 	
+    void Start()
+    {
+        player.GetComponent<PlayerInventory>().inventory = GameObject.FindGameObjectsWithTag("MainInventory")[0];
+        player.GetComponent<PlayerInventory>().characterSystem = GameObject.FindGameObjectsWithTag("EquipmentSystem")[0];
+
+    }
 	// Update is called once per frame
 	void Update () {
-        
-
+        if (GameObject.FindGameObjectsWithTag("Player")[0] != null)
+            Manager.m.PlayerTransform = GameObject.FindGameObjectsWithTag("Player")[0].transform;
     }
 
-    void OnLevelWasLoaded(int level)
-    {
-       // player = (GameObject)Instantiate(playerPrefab);
-        if (level == 2)
-        {
-            player.transform.position = player.transform.position - new Vector3(6300, 0, 0);
-        }
-        else if (level == 3)
-        {
-            player.transform.position = player.transform.position - new Vector3(0, 6300, 0);
-        }
-
-    }
+    
 }

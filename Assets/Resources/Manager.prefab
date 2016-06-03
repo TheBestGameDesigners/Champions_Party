@@ -1,52 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &177330
+--- !u!1 &158742
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 481890}
-  - 114: {fileID: 11411780}
+  - 4: {fileID: 455488}
+  - 114: {fileID: 11459448}
   m_Layer: 0
-  m_Name: ManagerEnemy
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &481890
+--- !u!4 &455488
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 177330}
+  m_GameObject: {fileID: 158742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1851.0568, y: -826.32794, z: 90}
+  m_LocalPosition: {x: 1581, y: -850, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11411780
+--- !u!114 &11459448
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 177330}
+  m_GameObject: {fileID: 158742}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5011ae42489dbe449661e491038f05d, type: 3}
+  m_Script: {fileID: 11500000, guid: e97c5c2fbc63b114998f8790d2fda473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 158724, guid: 6caf1fdfca6f8fa468dcd596dbb2f5ae, type: 2}
-  spawnTime: 3
-  spawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  numEnemies: 40
+  healthPlayer: 100
+  oldScene: 0
+  currentScene: 0
+  PlayerTransform: {fileID: 0}
+  currentWeapon: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -56,5 +53,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 177330}
+  m_RootGameObject: {fileID: 158742}
   m_IsPrefabParent: 1

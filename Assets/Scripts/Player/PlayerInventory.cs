@@ -40,6 +40,13 @@ public class PlayerInventory : MonoBehaviour
         DontDestroyOnLoad(this);
         
     }
+
+    public void setInput()
+    {
+
+        inputManagerDatabase = (InputManager)Resources.Load("InputManager");
+
+    }
     public void OnEnable()
     {
         Inventory.ItemEquip += OnBackpack;
@@ -160,10 +167,10 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    void Start()
+    public void Start()
     {
-        inventory = GameObject.FindGameObjectsWithTag("MainInventory")[0];
-        characterSystem = GameObject.FindGameObjectsWithTag("EquipmentSystem")[0];
+        //mainInventory = GameObject.FindGameObjectsWithTag("MainInventory")[0];
+        //characterSystem = GameObject.FindGameObjectsWithTag("EquipmentSystem")[0];
         //if (HPMANACanvas != null)
         //{
         //    hpText = HPMANACanvas.transform.GetChild(1).GetChild(0).GetComponent<Text>();
@@ -172,10 +179,9 @@ public class PlayerInventory : MonoBehaviour
 
         //    hpImage = HPMANACanvas.transform.GetChild(1).GetComponent<Image>();
         //    manaImage = HPMANACanvas.transform.GetChild(1).GetComponent<Image>();
+        inventory = GameObject.FindGameObjectsWithTag("MainInventory")[0];
+        characterSystem = GameObject.FindGameObjectsWithTag("EquipmentSystem")[0];
 
-        //    UpdateHPBar();
-        //    UpdateManaBar();
-        //}
 
         if (inputManagerDatabase == null)
             inputManagerDatabase = (InputManager)Resources.Load("InputManager");
@@ -192,6 +198,7 @@ public class PlayerInventory : MonoBehaviour
         if (craftSystem != null)
             craftSystemInventory = craftSystem.GetComponent<Inventory>();
     }
+
 
     //void UpdateHPBar()
     //{

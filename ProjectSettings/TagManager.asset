@@ -43,7 +43,7 @@ TagManager:
   - projectiles
   - npc
   - Camera
-  - 
+  - cameraBounds
   - 
   - 
   - 

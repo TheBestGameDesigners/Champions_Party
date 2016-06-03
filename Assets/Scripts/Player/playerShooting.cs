@@ -21,6 +21,8 @@ public class playerShooting : MonoBehaviour {
     
     void Start()
     {
+        if (Manager.m.currentWeapon != null)
+            currentWeapon = Manager.m.currentWeapon;
         colisionObj = null;
     }
 
