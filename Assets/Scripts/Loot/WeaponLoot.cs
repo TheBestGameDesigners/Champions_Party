@@ -14,10 +14,17 @@ public class WeaponLoot : MonoBehaviour
     {
 
         inventoryItemList = (ItemDataBaseList)Resources.Load("ItemDatabase");
+        StorageInventory loot = GetComponent<StorageInventory>();
 
         for (int i = 0; i < inventoryItemList.itemList.Count; i++)
         {
-            GetComponent<StorageInventory>().addItemToStorage(i, 1);
+            
+
+            Item item = inventoryItemList.getItemByID(i);
+            item.itemValue = 1;
+
+            if (item.itemType == ItemType.Weapon)
+                loot.addItem(item);
 
         }
             
