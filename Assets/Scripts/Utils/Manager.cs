@@ -38,24 +38,27 @@ public class Manager : MonoBehaviour {
 
     void OnLevelWasLoaded(int level)
     {
-        GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
-        if (level == 2)
+        if (GameObject.FindGameObjectsWithTag("Player")[0] != null)
         {
-            if ((player.transform.position - new Vector3(6200, 0, 0)).x > 0)
-                player.transform.position = player.transform.position - new Vector3(6200, 0, 0);
-           /* else
-                Destroy(player);*/
-        }
-        else if (level == 3)
-        {
-            player.transform.position = player.transform.position - new Vector3(0, 6300, 0);
-        }
-        else if (level == 1)
-        {
-            if ((player.transform.position + new Vector3(6200, 0, 0)).x < 6400)
-                player.transform.position = player.transform.position + new Vector3(6200, 0, 0);
-            /*else
-                Destroy(player);*/
+            GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
+            if (level == 2)
+            {
+                if ((player.transform.position - new Vector3(6200, 0, 0)).x > 0)
+                    player.transform.position = player.transform.position - new Vector3(6200, 0, 0);
+                /* else
+                     Destroy(player);*/
+            }
+            else if (level == 3)
+            {
+                player.transform.position = player.transform.position - new Vector3(0, 6300, 0);
+            }
+            else if (level == 1)
+            {
+                if ((player.transform.position + new Vector3(6200, 0, 0)).x < 6400)
+                    player.transform.position = player.transform.position + new Vector3(6200, 0, 0);
+                /*else
+                    Destroy(player);*/
+            }
         }
 
 
