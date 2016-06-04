@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 421176}
   - 61: {fileID: 6121784}
+  - 114: {fileID: 11475956}
   m_Layer: 8
   m_Name: BorderCollider (2)
   m_TagString: Border
@@ -57,7 +58,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 462084}
   - 61: {fileID: 6167174}
-  - 114: {fileID: 11451104}
   m_Layer: 8
   m_Name: BorderCollider (4)
   m_TagString: Border
@@ -74,7 +74,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 466324}
   - 61: {fileID: 6108016}
-  - 114: {fileID: 11479060}
   m_Layer: 8
   m_Name: BorderCollider (1)
   m_TagString: Border
@@ -91,6 +90,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 412946}
   - 61: {fileID: 6135458}
+  - 114: {fileID: 11469234}
   m_Layer: 8
   m_Name: BorderCollider (1)
   m_TagString: Border
@@ -107,7 +107,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 422992}
   - 61: {fileID: 6105236}
-  - 114: {fileID: 11469112}
   m_Layer: 8
   m_Name: BorderCollider (2)
   m_TagString: Border
@@ -171,6 +170,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 468636}
   - 61: {fileID: 6154960}
+  - 114: {fileID: 11475124}
   m_Layer: 8
   m_Name: BorderCollider (3)
   m_TagString: Border
@@ -204,7 +204,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 402644}
   - 61: {fileID: 6182376}
-  - 114: {fileID: 11449482}
   m_Layer: 8
   m_Name: BorderCollider (3)
   m_TagString: Border
@@ -237,6 +236,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 489434}
   - 61: {fileID: 6183172}
+  - 114: {fileID: 11482802}
   m_Layer: 8
   m_Name: BorderCollider
   m_TagString: Border
@@ -634,28 +634,6 @@ BoxCollider2D:
   m_Offset: {x: -3200, y: 0}
   serializedVersion: 2
   m_Size: {x: 20, y: 6400}
---- !u!114 &11449482
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 182570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b602fed2c6f0c544819be64b3e31d22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11451104
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 107482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b602fed2c6f0c544819be64b3e31d22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11462322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -667,23 +645,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56c36f37b2b01de4b99bdee024e0ad17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11469112
+--- !u!114 &11469234
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128338}
+  m_GameObject: {fileID: 127544}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b602fed2c6f0c544819be64b3e31d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11479060
+--- !u!114 &11475124
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 109812}
+  m_GameObject: {fileID: 159582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b602fed2c6f0c544819be64b3e31d22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11475956
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b602fed2c6f0c544819be64b3e31d22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11482802
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193162}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b602fed2c6f0c544819be64b3e31d22, type: 3}
