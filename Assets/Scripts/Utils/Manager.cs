@@ -50,7 +50,8 @@ public class Manager : MonoBehaviour {
             }
             else if (level == 3)
             {
-                player.transform.position = player.transform.position - new Vector3(0, 6300, 0);
+                if ((player.transform.position - new Vector3(0, 6200, 0)).y < 6400)
+                    player.transform.position = player.transform.position - new Vector3(0, 6200, 0);
             }
             else if (level == 1)
             {

@@ -24,7 +24,8 @@ public class SpawningEnemy : MonoBehaviour {
             if (spawnPoints[spawnIndex] != null)
             {
                 pointSpawn p = spawnPoints[spawnIndex].GetComponent<pointSpawn>();
-                if (!p.visible)
+                float distance = Vector3.Distance(spawnPoints[spawnIndex].transform.position, GameObject.FindGameObjectsWithTag("Player")[0].transform.position);
+                if (!p.visible && distance < 2500f)
                 {
                     Instantiate(enemy, spawnPoints[spawnIndex].transform.position, spawnPoints[spawnIndex].transform.rotation);
                     numEnemies--;
