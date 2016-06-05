@@ -16,29 +16,29 @@ public class Main : MonoBehaviour {
     public GameObject PausePrefab;
 
     void Awake()
-    { 
-
-        if (!Manager.m.HUD)
+    {
+        Manager m = Manager.m.getInstance();
+        if (!m.HUD)
         {
             HUD = (GameObject) Instantiate(HUDPrefab);
-            Manager.m.HUD = HUD;
+            m.HUD = HUD;
 
         }
-        if (!Manager.m.Pause)
+        if (!m.Pause)
         {
             Pause = (GameObject)Instantiate(PausePrefab);
-            Manager.m.Pause = Pause;
+            m.Pause = Pause;
 
         }
 
-        if (!Manager.m.Inventory)
+        if (!m.Inventory)
         {
             inventario = (GameObject)Instantiate(InventoryPrefab);
-            Manager.m.Inventory = inventario;
+            m.Inventory = inventario;
 
         }
 
-        if (!Manager.m.player)
+        if (!m.player)
         {
             player = (GameObject)Instantiate(playerPrefab, new Vector3(1500, -970, 0), Quaternion.Euler(0, 0, 0));
             player.tag = "Player";
@@ -46,9 +46,9 @@ public class Main : MonoBehaviour {
 
         }
         else
-            player = Manager.m.player;
+            player = m.player;
         
-        Manager.m.PlayerTransform = player.transform;
+        m.PlayerTransform = player.transform;
 
     }
 	

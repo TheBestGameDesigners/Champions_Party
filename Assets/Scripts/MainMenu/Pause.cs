@@ -15,7 +15,8 @@ public class Pause : MonoBehaviour {
 		showPanels =  GetComponent<ShowPanels> ();
 		//Get a component reference to StartButton attached to this object, store in startScript variable
 		startScript = GetComponent<StartOptions> ();
-	}
+        DontDestroyOnLoad(this);
+    }
 
     void Start() {
         //Set isPaused to false

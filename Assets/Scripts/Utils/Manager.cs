@@ -31,6 +31,16 @@ public class Manager : MonoBehaviour {
 
     }
 	
+    public Manager getInstance()
+    {
+        if (!m)
+        {
+            m = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        return m;
+    }
+
 	// Update is called once per frame
 	void Update () {
 	
@@ -50,15 +60,15 @@ public class Manager : MonoBehaviour {
             }
             else if (level == 3)
             {
-                if ((player.transform.position - new Vector3(0, 6200, 0)).y < 6400)
+                if ((player.transform.position - new Vector3(0, 6200, 0)).y > -6400)
                     player.transform.position = player.transform.position - new Vector3(0, 6200, 0);
             }
             else if (level == 1)
             {
                 if ((player.transform.position + new Vector3(6200, 0, 0)).x < 6400)
                     player.transform.position = player.transform.position + new Vector3(6200, 0, 0);
-                /*else
-                    Destroy(player);*/
+                else if ((player.transform.position + new Vector3(0, 6200, 0)).y < 0)
+                    player.transform.position = player.transform.position + new Vector3(0, 6200, 0);
             }
         }
 

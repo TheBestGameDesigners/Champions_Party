@@ -93,6 +93,10 @@ public class Inventory : MonoBehaviour
     public static event InventoryOpened InventoryOpen;
     public static event InventoryOpened AllInventoriesClosed;
 
+    void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
     void Start()
     {
         if (transform.GetComponent<Hotbar>() == null)
