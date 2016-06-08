@@ -179,8 +179,8 @@ public class PlayerInventory : MonoBehaviour
 
         //    hpImage = HPMANACanvas.transform.GetChild(1).GetComponent<Image>();
         //    manaImage = HPMANACanvas.transform.GetChild(1).GetComponent<Image>();
-        inventory = GameObject.FindGameObjectsWithTag("MainInventory")[0];
-        characterSystem = GameObject.FindGameObjectsWithTag("EquipmentSystem")[0];
+        inventory = GameObject.FindGameObjectWithTag("MainInventory");
+        characterSystem = GameObject.FindGameObjectWithTag("EquipmentSystem");
 
 
         if (inputManagerDatabase == null)
