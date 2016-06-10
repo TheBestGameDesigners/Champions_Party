@@ -13,6 +13,8 @@ public abstract class Hito{
 
     public abstract bool compruebaHito(int dato, bool llegado, string arma);
 
+    public abstract void recompensaHito();
+
     public virtual string muestraHito() { return texto; }
 
 }

@@ -17,4 +17,10 @@ public class HitoArmas : Hito {
             return true;
         return false;
     }
+
+
+    public override void recompensaHito()
+    {
+
+    }
 }

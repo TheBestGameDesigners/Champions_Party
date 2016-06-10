@@ -24,10 +24,7 @@ public class bonusBullet : MonoBehaviour {
             GameObject weapon = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<playerShooting>().currentWeapon;
             if (weapon != null)
             {
-                Debug.Log(weapon.GetComponent<Weapon>().numBullet);
                 weapon.GetComponent<Weapon>().numBullet += numBullets;
-                Debug.Log(weapon.GetComponent<Weapon>().numBullet);
-
                // Destroy(gameObject);
             }
         }

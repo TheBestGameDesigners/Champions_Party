@@ -10,11 +10,12 @@ public class Main : MonoBehaviour {
     GameObject inventario;
     GameObject HUD;
     GameObject Pause;
+    GameObject trophy;
     public GameObject playerPrefab;
     public GameObject InventoryPrefab;
     public GameObject HUDPrefab;
     public GameObject PausePrefab;
-
+    public GameObject trophyPrefab;
     void Awake()
     {
         Manager m = Manager.m.getInstance();
@@ -49,6 +50,23 @@ public class Main : MonoBehaviour {
             player = m.player;
         
         m.PlayerTransform = player.transform;
+
+        if (!m.trophy)
+        {
+            int spawn = Random.Range(0,3);
+            if (spawn == 2)
+            {
+                int spawnH = Random.Range(-200, -6200);
+                int spawnW = Random.Range(200, 6200);
+                float distance = Vector3.Distance(new Vector3(spawnW, spawnH, 0), player.transform.position);
+                while (distance < 3000f)
+                {
+                    distance = Vector3.Distance(new Vector3(spawnW, spawnH, 0), player.transform.position);
+                }
+                trophy = (GameObject)Instantiate(trophyPrefab, new Vector3(spawnW, spawnH, 0), Quaternion.Euler(0, 0, 0));
+                Manager.m.trophy = trophy;
+            }
+        }
 
     }
 	

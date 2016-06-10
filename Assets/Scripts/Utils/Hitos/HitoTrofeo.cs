@@ -1,25 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HitoEncuentraArma : Hito {
+public class HitoTrofeo : Hito
+{
 
-    string arma;
-    public HitoEncuentraArma(string arma)
+    public HitoTrofeo()
     {
-        this.arma = arma;
-        texto = "consigue una " + arma;
+        texto = "Encuentra el preciado trofeo";
     }
 
     public override bool compruebaHito(int dato, bool llegado, string arma)
     {
-        if (this.arma == arma)
-            return true;
         return false;
     }
 
-
     public override void recompensaHito()
     {
-
     }
+
+
 }
+
