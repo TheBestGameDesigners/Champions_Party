@@ -17,6 +17,10 @@ public class BorderLeft : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        GameObject.FindGameObjectWithTag("Manager").GetComponent<Manager>().setCurrentItems(
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().getInventory().getItemList()
+        );
+
         if (col.gameObject.CompareTag("Player"))
             SceneManager.LoadScene(1);
     }

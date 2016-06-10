@@ -41,6 +41,10 @@ public class PlayerInventory : MonoBehaviour
         
     }
 
+    public Inventory getInventory()
+    {
+        return mainInventory;
+    }
     public void setInput()
     {
 

@@ -585,6 +585,25 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
+
+    /* METODO PROPIO MADAFAKA*/
+    public List<int> SaveItems(int itemID, int itemValue)
+    {
+
+        List<int> items = new List<int>();
+        updateItemList();
+        int stack;
+        for (int i = 0; i < ItemsInInventory.Count; i++)
+        {
+
+            Debug.Log(ItemsInInventory[i].itemID);
+            items.Add(ItemsInInventory[i].itemID);
+          
+        }
+
+        return items;
+    }
+
     public void addItemToInventory(int id)
     {
         for (int i = 0; i < SlotContainer.transform.childCount; i++)

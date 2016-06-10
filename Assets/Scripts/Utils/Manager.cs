@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Manager : MonoBehaviour {
 
@@ -15,6 +16,15 @@ public class Manager : MonoBehaviour {
     public GameObject HUD;
     public GameObject Pause;
     public GameObject trophy;
+
+    private List<Item> currentItems;
+
+
+    public void setCurrentItems(List<Item> l)
+    {
+        currentItems = l;
+
+    }
     void Awake()
     {
         if (!m)
@@ -70,11 +80,26 @@ public class Manager : MonoBehaviour {
                 else if ((player.transform.position + new Vector3(0, 6200, 0)).y < 0)
                     player.transform.position = player.transform.position + new Vector3(0, 6200, 0);
             }
+
+            CheckInventory();
+
+
+            if (currentItems != null)
+            {
+                Inventory inv = player.GetComponent<PlayerInventory>().getInventory();
+                foreach(var item in currentItems)
+                {
+                    inv.addItemToInventory(item.itemID);
+                    
+                }
+            }
+                
+
         }
 
 
 
-        CheckInventory();
+        
     }
 
     void CheckInventory()
