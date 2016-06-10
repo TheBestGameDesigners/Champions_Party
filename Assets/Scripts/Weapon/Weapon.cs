@@ -13,6 +13,7 @@ public class Weapon : MonoBehaviour {
     public GameObject bullet;
     GameObject bulletPosition;
     public float speed;
+    Text texto;
 
 
 
@@ -20,7 +21,8 @@ public class Weapon : MonoBehaviour {
     void Start () {
         //bulletPosition = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<playerShooting>().bulletPosition;
         //bulletPosition = GameObject.Find("bulletPosition");
-	}
+       texto =  GameObject.FindGameObjectsWithTag("HUD")[0].transform.Find("Text").GetComponent<Text>();
+    }
 
     public void Fire()
     {
@@ -53,7 +55,7 @@ public class Weapon : MonoBehaviour {
             }
             else
             {
-                //texto.text = "No tienes balas";
+                texto.text = "No tienes balas";
             }
             
         }

@@ -4,7 +4,10 @@ using System.Collections;
 
 public class moveTrophy : MonoBehaviour {
 
-	// Use this for initialization
+	void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
 	void Start () {
 	
 	}

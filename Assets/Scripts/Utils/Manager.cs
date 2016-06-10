@@ -14,7 +14,7 @@ public class Manager : MonoBehaviour {
     public GameObject Inventory;
     public GameObject HUD;
     public GameObject Pause;
-
+    public GameObject trophy;
     void Awake()
     {
         if (!m)
