@@ -179,8 +179,18 @@ public class PlayerInventory : MonoBehaviour
 
         //    hpImage = HPMANACanvas.transform.GetChild(1).GetComponent<Image>();
         //    manaImage = HPMANACanvas.transform.GetChild(1).GetComponent<Image>();
-        inventory = GameObject.FindGameObjectsWithTag("MainInventory")[0];
-        characterSystem = GameObject.FindGameObjectsWithTag("EquipmentSystem")[0];
+
+
+        try
+        {
+            inventory = GameObject.FindGameObjectsWithTag("MainInventory")[0];
+            characterSystem = GameObject.FindGameObjectsWithTag("EquipmentSystem")[0];
+        }
+        catch (System.IndexOutOfRangeException e)
+        {
+           
+        }
+      
 
 
         if (inputManagerDatabase == null)
