@@ -13,10 +13,13 @@ public class CarMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Vector2 v2 = gameObject.transform.position;
-    if(sentidoUp)
-        v2 += Vector2.up * Time.deltaTime * speed;
-    else
-        v2 += Vector2.down * Time.deltaTime * speed;
+        if (sentidoUp)
+            v2 += Vector2.up * Time.deltaTime * speed;
+        else
+        {
+            v2 += Vector2.down * Time.deltaTime * speed;
+            gameObject.transform.Rotate(new Vector3(0, 180, 0));
+        }
         gameObject.transform.position = v2;
 
     }
