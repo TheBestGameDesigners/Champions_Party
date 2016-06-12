@@ -41,15 +41,26 @@ public class Weapon : MonoBehaviour {
                 bulletPosition = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<playerShooting>().bulletPosition;
                 //...instantiating the rocket
                 Vector3 v = new Vector3(30, 30, 0);
+                float speedShoot = speed;
                 for (int i = 0; i < numBulletInstanciate; i++)
                 {
-                    if (i != 0)
+                    if (name == "shotgun")
                     {
-                        shootDirection += v;
-                        v = -v;
+                        if (i != 0)
+                        {
+                            shootDirection += v;
+                            v = -v;
+                        }
+                    }
+                    else if(name == "machineGun")
+                    {
+                        if(i != 0)
+                        {
+                            speedShoot -= 0.5f;
+                        }
                     }
                     GameObject bulletInstance = (GameObject)Instantiate(bullet, bulletPosition.transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
-                    bulletInstance.GetComponent<Rigidbody2D>().velocity = new Vector2(shootDirection.x * speed, shootDirection.y * speed);
+                    bulletInstance.GetComponent<Rigidbody2D>().velocity = new Vector2(shootDirection.x * speedShoot, shootDirection.y * speedShoot);
                     numBullet--;
                 }
             }
