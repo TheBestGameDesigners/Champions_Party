@@ -17,10 +17,13 @@ public class TrapSpeed : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        PlayerMovement playerMove = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerMovement>();
-        playerMove.iceMan = true;
-        playerMove.timeIceMan = timeTrap;
-        playerMove.speed = playerMove.speed - ((playerMove.speed * percentSpeedTrap) / 100);
-        Destroy(gameObject);
+        if (col.gameObject.CompareTag("Player"))
+        {
+            PlayerMovement playerMove = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerMovement>();
+            playerMove.iceMan = true;
+            playerMove.timeIceMan = timeTrap;
+            playerMove.speed = playerMove.speed - ((playerMove.speed * percentSpeedTrap) / 100);
+            Destroy(gameObject);
+        }
     }
 }

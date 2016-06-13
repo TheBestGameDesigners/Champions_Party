@@ -53,9 +53,9 @@ public class Main : MonoBehaviour {
 
         if (!m.trophy)
         {
-            int spawn = Random.Range(0,3);
+           /* int spawn = Random.Range(0,3);
             if (spawn == 2)
-            {
+            {*/
                 int spawnH = Random.Range(-200, -6200);
                 int spawnW = Random.Range(200, 6200);
                 float distance = Vector3.Distance(new Vector3(spawnW, spawnH, 0), player.transform.position);
@@ -66,7 +66,7 @@ public class Main : MonoBehaviour {
                 trophy = (GameObject)Instantiate(trophyPrefab, new Vector3(spawnW, spawnH, 0), Quaternion.Euler(0, 0, 0));
                 Manager.m.trophy = trophy;
             }
-        }
+        //}
 
     }
 	
@@ -78,7 +78,7 @@ public class Main : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
-        if (GameObject.FindGameObjectsWithTag("Player")[0] != null)
+        if (GameObject.FindGameObjectsWithTag("Player").Length != 0)
             Manager.m.PlayerTransform = GameObject.FindGameObjectsWithTag("Player")[0].transform;
     }
 

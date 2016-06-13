@@ -67,7 +67,7 @@ public class StorageInventory : MonoBehaviour
             inputManagerDatabase = (InputManager)Resources.Load("InputManager");
 
         player = GameObject.FindGameObjectWithTag("Player");
-        inv = inventory.GetComponent<Inventory>();
+       
 
         ItemDataBaseList inventoryItemList = (ItemDataBaseList)Resources.Load("ItemDatabase");
 
@@ -99,6 +99,15 @@ public class StorageInventory : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Tooltip") != null)
             tooltip = GameObject.FindGameObjectWithTag("Tooltip").GetComponent<Tooltip>();
 
+        try
+        {
+            inv = inventory.GetComponent<Inventory>();
+        }catch(System.NullReferenceException e)
+        {
+
+
+        }
+        
     }
 
     public void setImportantVariables()
